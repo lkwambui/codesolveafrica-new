@@ -1,0 +1,68 @@
+import { TeamMember } from "@/types";
+
+export const teamMembers: TeamMember[] = [
+  {
+    id: "kwame-asante",
+    name: "Dr. Kwame Asante",
+    role: "Chief Executive Officer",
+    bio: "Visionary leader with 20+ years in technology and software engineering. Founded CodeSolveAfrica to bridge the digital divide and create world-class software solutions from Africa. Previously led engineering teams at Fortune 500 companies and built products serving millions.",
+    image: "/team/kwame-asante.jpg",
+    socials: { linkedin: "https://linkedin.com/in/kwameasante", twitter: "https://twitter.com/kwameasante" },
+  },
+  {
+    id: "amina-osei",
+    name: "Dr. Amina Osei",
+    role: "Chief Technology Officer",
+    bio: "PhD in Artificial Intelligence from MIT. Leads our technical vision and R&D initiatives. Published 30+ papers in top ML conferences and holds 5 patents in AI systems. Passionate about applying AI to solve Africa's unique challenges.",
+    image: "/team/amina-osei.jpg",
+    socials: { linkedin: "https://linkedin.com/in/aminaosei", twitter: "https://twitter.com/aminaosei" },
+  },
+  {
+    id: "sarah-mensah",
+    name: "Dr. Sarah Mensah",
+    role: "Chief Data Officer",
+    bio: "Data science veteran with 15 years of experience transforming organizations through data-driven strategies. Previously led analytics at major financial institutions. Expert in building data infrastructure and teams from the ground up.",
+    image: "/team/sarah-mensah.jpg",
+    socials: { linkedin: "https://linkedin.com/in/sarahmensah" },
+  },
+  {
+    id: "michael-nkosi",
+    name: "Michael Nkosi",
+    role: "VP of Cloud Architecture",
+    bio: "5x AWS Certified Solutions Architect with deep expertise in cloud-native architectures. Has migrated over 500 enterprise workloads to the cloud. Leads our cloud practice and mentors the next generation of cloud engineers.",
+    image: "/team/michael-nkosi.jpg",
+    socials: { linkedin: "https://linkedin.com/in/michaelnkosi", github: "https://github.com/michaelnkosi" },
+  },
+  {
+    id: "grace-mwangi",
+    name: "Grace Mwangi",
+    role: "Head of Mobile Engineering",
+    bio: "Google Developer Expert in Flutter and React Native. Published 15+ apps on App Store and Google Play with combined 5M+ downloads. Leads our mobile practice and advocates for cross-platform excellence.",
+    image: "/team/grace-mwangi.jpg",
+    socials: { linkedin: "https://linkedin.com/in/gracemwangi", twitter: "https://twitter.com/gracemwangi" },
+  },
+  {
+    id: "david-kamau",
+    name: "David Kamau",
+    role: "Blockchain Practice Lead",
+    bio: "Pioneer in African blockchain technology. Built DeFi protocols managing $100M+ in total value locked. Advises governments on blockchain policy and regularly speaks at international tech conferences.",
+    image: "/team/david-kamau.jpg",
+    socials: { linkedin: "https://linkedin.com/in/davidkamau", github: "https://github.com/davidkamau" },
+  },
+  {
+    id: "zuri-adebayo",
+    name: "Zuri Adebayo",
+    role: "Design Director",
+    bio: "Award-winning designer with expertise in design systems and user research. Previously led design at leading African tech companies. Creates intuitive, accessible, and beautiful digital experiences that delight users.",
+    image: "/team/zuri-adebayo.jpg",
+    socials: { linkedin: "https://linkedin.com/in/zuriadebayo", twitter: "https://twitter.com/zuriadebayo" },
+  },
+  {
+    id: "james-ochieng",
+    name: "James Ochieng",
+    role: "Security & QA Director",
+    bio: "CISSP and CEH certified security professional with 12 years in cybersecurity. Built and led security operations centers for financial institutions. Ensures every product we deliver meets the highest security standards.",
+    image: "/team/james-ochieng.jpg",
+    socials: { linkedin: "https://linkedin.com/in/jamesochieng", github: "https://github.com/jamesochieng" },
+  },
+];
