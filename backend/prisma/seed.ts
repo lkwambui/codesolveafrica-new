@@ -325,7 +325,7 @@ async function main() {
   const settings = [
     { key: 'site_name', value: 'CodeSolveAfrica', type: 'TEXT' as const, group: 'general', label: 'Site Name', isPublic: true, sortOrder: 1 },
     { key: 'site_description', value: 'Empowering African businesses through innovative technology solutions', type: 'TEXT' as const, group: 'general', label: 'Site Description', isPublic: true, sortOrder: 2 },
-    { key: 'contact_email', value: 'hello@codesolveafrica.com', type: 'TEXT' as const, group: 'contact', label: 'Contact Email', isPublic: true, sortOrder: 3 },
+    { key: 'contact_email', value: 'info@codesolveafrica.co.ke', type: 'TEXT' as const, group: 'contact', label: 'Contact Email', isPublic: true, sortOrder: 3 },
     { key: 'contact_phone', value: '+233 50 000 0000', type: 'TEXT' as const, group: 'contact', label: 'Contact Phone', isPublic: true, sortOrder: 4 },
     { key: 'address', value: 'Accra, Ghana', type: 'TEXT' as const, group: 'contact', label: 'Address', isPublic: true, sortOrder: 5 },
     { key: 'social_twitter', value: 'https://twitter.com/codesolveafrica', type: 'TEXT' as const, group: 'social', label: 'Twitter URL', isPublic: true, sortOrder: 6 },
