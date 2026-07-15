@@ -3,14 +3,14 @@ export const COMPANY = {
   tagline: "Enterprise Technology, African Innovation",
   description:
     "We build world-class enterprise software solutions that drive digital transformation across Africa and beyond.",
-  email: "hello@codesolveafrica.com",
-  phone: "+254 700 123 456",
+  email: "info@codesolveafrica.co.ke",
+  phone: "0799656264",
   address: "Nairobi, Kenya",
   socials: {
-    linkedin: "https://linkedin.com/company/codesolveafrica",
-    twitter: "https://twitter.com/codesolveafrica",
-    github: "https://github.com/codesolveafrica",
-    youtube: "https://youtube.com/@codesolveafrica",
+    tiktok: "https://www.tiktok.com/@codesolveafrica0?_r=1&_t=ZS-983WFMYw3JU",
+    facebook: "https://web.facebook.com/profile.php?id=61592039696272",
+    instagram: "https://www.instagram.com/codesolveafrica/",
+    youtube: "https://youtube.com/@codesolveafrica?si=yiIpuIkUSLypcR-7",
   },
 } as const;
 
@@ -31,5 +31,5 @@ export const SITE_CONFIG = {
   description:
     "Premier enterprise technology company building world-class software solutions. Custom development, cloud, AI, cybersecurity, and digital transformation services.",
   url: "https://codesolveafrica.com",
-  ogImage: "/og-image.jpg",
+  ogImage: "/og-image.png",
 } as const;

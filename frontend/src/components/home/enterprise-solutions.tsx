@@ -16,7 +16,7 @@ const iconMap: Record<string, LucideIcon> = {
 
 export function EnterpriseSolutions() {
   return (
-    <section className="py-20">
+    <section className="py-20 dark:bg-primary">
       <Container>
         <SectionHeader
           subtitle="Enterprise Solutions"
@@ -33,7 +33,7 @@ export function EnterpriseSolutions() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.5, delay: index * 0.1 }}
-                className="group rounded-2xl border border-border bg-white p-6 hover:shadow-elevated hover:border-primary-blue/20 transition-all duration-300"
+                className="group rounded-2xl border border-border bg-white p-6 hover:shadow-elevated hover:border-primary-blue/20 transition-all duration-300 dark:bg-primary-800 dark:border-white/10"
               >
                 <div className="flex items-center gap-4 mb-4">
                   <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-accent/10 text-accent">
@@ -41,15 +41,15 @@ export function EnterpriseSolutions() {
                   </div>
                   <Badge variant="accent">Enterprise</Badge>
                 </div>
-                <h3 className="font-heading text-lg font-semibold text-primary-text group-hover:text-primary-blue transition-colors">
+                <h3 className="font-heading text-lg font-semibold text-primary-text group-hover:text-primary-blue transition-colors dark:text-white">
                   {solution.title}
                 </h3>
-                <p className="mt-2 text-sm text-secondary-text leading-relaxed">
+                <p className="mt-2 text-sm text-secondary-text leading-relaxed dark:text-white/60">
                   {solution.description}
                 </p>
                 <ul className="mt-4 space-y-2">
                   {solution.features.slice(0, 3).map((feature) => (
-                    <li key={feature} className="flex items-start gap-2 text-xs text-secondary-text">
+                    <li key={feature} className="flex items-start gap-2 text-xs text-secondary-text dark:text-white/60">
                       <CheckCircle2 className="h-3.5 w-3.5 text-success mt-0.5 flex-shrink-0" />
                       {feature}
                     </li>

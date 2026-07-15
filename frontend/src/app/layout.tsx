@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { Inter, Plus_Jakarta_Sans } from "next/font/google";
+import Script from "next/script";
 import "./globals.css";
 import { Providers } from "@/components/providers/providers";
 import { Navbar } from "@/components/layout/navbar";
@@ -37,6 +38,14 @@ export const metadata: Metadata = {
   ],
   authors: [{ name: "CodeSolveAfrica" }],
   creator: "CodeSolveAfrica",
+  icons: {
+    icon: [
+      { url: "/favicon.ico", sizes: "any" },
+      { url: "/icon.svg", type: "image/svg+xml" },
+    ],
+    apple: [{ url: "/apple-touch-icon.png", sizes: "180x180" }],
+  },
+  manifest: "/site.webmanifest",
   openGraph: {
     type: "website",
     locale: "en_US",
@@ -44,13 +53,13 @@ export const metadata: Metadata = {
     siteName: "CodeSolveAfrica",
     title: SITE_CONFIG.title,
     description: SITE_CONFIG.description,
-    images: [{ url: SITE_CONFIG.ogImage, width: 1200, height: 630 }],
+    images: [{ url: "/og-image.png", width: 1200, height: 630 }],
   },
   twitter: {
     card: "summary_large_image",
     title: SITE_CONFIG.title,
     description: SITE_CONFIG.description,
-    images: [SITE_CONFIG.ogImage],
+    images: ["/og-image.png"],
   },
   robots: {
     index: true,
@@ -64,8 +73,11 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en" className={`${inter.variable} ${plusJakarta.variable}`}>
-      <body className="min-h-screen flex flex-col">
+    <html lang="en" className={`${inter.variable} ${plusJakarta.variable}`} suppressHydrationWarning>
+      <body className="min-h-screen flex flex-col" suppressHydrationWarning>
+        <Script id="remove-bis" strategy="beforeInteractive">
+          {`document.querySelectorAll("[bis_skin_checked]").forEach(function(e){e.removeAttribute("bis_skin_checked")})`}
+        </Script>
         <Providers>
           <Navbar />
           <main className="flex-1">{children}</main>

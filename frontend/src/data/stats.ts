@@ -2,39 +2,33 @@ import { Stat } from "@/types";
 
 export const stats: Stat[] = [
   {
-    value: 500,
+    value: 15,
     suffix: "+",
     label: "Projects Delivered",
-    description: "Across 20+ industries worldwide",
+    description: "Across various industries in Africa",
   },
   {
-    value: 200,
+    value: 10,
     suffix: "+",
-    label: "Enterprise Clients",
-    description: "From startups to Fortune 500 companies",
+    label: "Happy Clients",
+    description: "From startups to growing enterprises",
   },
   {
-    value: 50,
-    suffix: "+",
+    value: 3,
+    suffix: "",
     label: "Countries Served",
-    description: "Global reach with local expertise",
+    description: "Growing our reach across Africa",
   },
   {
-    value: 350,
-    suffix: "+",
+    value: 3,
+    suffix: "",
     label: "Team Members",
-    description: "Top-tier engineers and consultants",
+    description: "Passionate and experienced professionals",
   },
   {
     value: 98,
     suffix: "%",
     label: "Client Satisfaction",
     description: "Consistently exceeding expectations",
-  },
-  {
-    value: 15,
-    suffix: "+",
-    label: "Years Experience",
-    description: "Since our founding in 2010",
   },
 ];

@@ -1,0 +1,33 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 1200" fill="none">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#0F172A"/>
+      <stop offset="100%" stop-color="#1E293B"/>
+    </linearGradient>
+    <linearGradient id="iconBg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#2563EB"/>
+      <stop offset="100%" stop-color="#06B6D4"/>
+    </linearGradient>
+    <linearGradient id="glow" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#3B82F6" stop-opacity="0.3"/>
+      <stop offset="100%" stop-color="#06B6D4" stop-opacity="0.1"/>
+    </linearGradient>
+  </defs>
+
+  <rect width="1200" height="1200" fill="url(#bg)" rx="60"/>
+
+  <circle cx="600" cy="460" r="200" fill="url(#glow)"/>
+
+  <rect x="460" y="320" width="280" height="280" rx="60" fill="url(#iconBg)"/>
+  
+  <path d="M 540 380 L 480 460 L 540 540" stroke="white" stroke-width="20" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M 600 380 L 660 540" stroke="white" stroke-width="20" stroke-linecap="round"/>
+  <path d="M 660 380 L 720 460 L 660 540" stroke="white" stroke-width="20" stroke-linecap="round" stroke-linejoin="round"/>
+
+  <text x="600" y="710" text-anchor="middle" fill="#FFFFFF" font-family="'Plus Jakarta Sans', 'Inter', system-ui, -apple-system, sans-serif" font-weight="800" font-size="80" letter-spacing="-1">CodeSolve</text>
+  <text x="600" y="800" text-anchor="middle" fill="#60A5FA" font-family="'Plus Jakarta Sans', 'Inter', system-ui, -apple-system, sans-serif" font-weight="800" font-size="80" letter-spacing="-1">Africa</text>
+
+  <text x="600" y="880" text-anchor="middle" fill="#94A3B8" font-family="'Inter', system-ui, -apple-system, sans-serif" font-weight="500" font-size="32" letter-spacing="2">ENGINEERING INTELLIGENT DIGITAL SOLUTIONS</text>
+  
+  <line x1="350" y1="920" x2="850" y2="920" stroke="#2563EB" stroke-width="3" stroke-linecap="round" opacity="0.6"/>
+</svg>

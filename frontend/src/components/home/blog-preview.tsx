@@ -12,7 +12,7 @@ export function BlogPreview() {
   const latest = blogPosts.slice(0, 3);
 
   return (
-    <section className="py-20">
+    <section className="py-20 dark:bg-primary">
       <Container>
         <SectionHeader
           subtitle="Insights"
@@ -34,7 +34,7 @@ export function BlogPreview() {
           ))}
         </div>
         <div className="mt-12 text-center">
-          <Button asChild variant="outline" size="lg">
+          <Button asChild variant="accent" size="lg">
             <Link href="/blog">
               View All Articles <ArrowRight className="ml-2 h-4 w-4" />
             </Link>

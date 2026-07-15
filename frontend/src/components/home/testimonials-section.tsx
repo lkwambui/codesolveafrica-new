@@ -16,7 +16,7 @@ export function TestimonialsSection() {
   const testimonial = testimonials[current];
 
   return (
-    <section className="py-20 bg-surface">
+    <section className="py-20 bg-surface dark:bg-primary-800/50">
       <Container>
         <SectionHeader
           subtitle="Testimonials"
@@ -32,7 +32,7 @@ export function TestimonialsSection() {
                 animate={{ opacity: 1, x: 0 }}
                 exit={{ opacity: 0, x: -20 }}
                 transition={{ duration: 0.3 }}
-                className="rounded-2xl border border-border bg-white p-8 md:p-12"
+                className="rounded-2xl border border-border bg-white p-8 md:p-12 dark:bg-primary-800 dark:border-white/10"
               >
                 <div className="flex items-center gap-0.5 mb-6">
                   {Array.from({ length: 5 }).map((_, i) => (
@@ -44,7 +44,7 @@ export function TestimonialsSection() {
                     />
                   ))}
                 </div>
-                <blockquote className="text-lg md:text-xl text-primary-text leading-relaxed font-medium">
+                <blockquote className="text-lg md:text-xl text-primary-text leading-relaxed font-medium dark:text-white">
                   &ldquo;{testimonial.content}&rdquo;
                 </blockquote>
                 <div className="mt-8 flex items-center gap-4">
@@ -52,10 +52,10 @@ export function TestimonialsSection() {
                     {testimonial.name.split(" ").map((n) => n[0]).join("")}
                   </div>
                   <div>
-                    <p className="font-heading text-base font-semibold text-primary-text">
+                    <p className="font-heading text-base font-semibold text-primary-text dark:text-white">
                       {testimonial.name}
                     </p>
-                    <p className="text-sm text-secondary-text">
+                    <p className="text-sm text-secondary-text dark:text-white/60">
                       {testimonial.role}, {testimonial.company}
                     </p>
                   </div>

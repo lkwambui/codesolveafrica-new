@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 280 48" fill="none">
+  <rect x="0" y="8" width="32" height="32" rx="7" fill="url(#g)"/>
+  <path d="M9 19L5 24L9 29" stroke="white" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M14 19L18 29" stroke="white" stroke-width="2.5" stroke-linecap="round"/>
+  <path d="M23 19L27 24L23 29" stroke="white" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+  <text x="48" y="30" fill="#F8FAFC" font-family="'Plus Jakarta Sans', 'Inter', system-ui, -apple-system, sans-serif" font-weight="700" font-size="22" letter-spacing="-0.5">CodeSolve</text>
+  <text x="160" y="30" fill="#60A5FA" font-family="'Plus Jakarta Sans', 'Inter', system-ui, -apple-system, sans-serif" font-weight="700" font-size="22" letter-spacing="-0.5">Africa</text>
+  <defs>
+    <linearGradient id="g" x1="0" y1="0" x2="32" y2="32">
+      <stop stop-color="#2563EB"/>
+      <stop offset="1" stop-color="#06B6D4"/>
+    </linearGradient>
+  </defs>
+</svg>

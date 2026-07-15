@@ -28,7 +28,7 @@ export function CTABanner({
   const bgClass =
     variant === "accent"
       ? "bg-accent"
-      : "bg-gradient-to-r from-primary to-primary-blue";
+      : "bg-primary-blue";
 
   return (
     <section className={cn("py-20", className)}>
@@ -38,7 +38,7 @@ export function CTABanner({
           bgClass
         )}
       >
-        <div className="absolute inset-0 bg-[url('/grid-pattern.svg')] opacity-10" />
+        <div className="absolute inset-0 bg-grid-dark opacity-20" />
         <div className="relative z-10 mx-auto max-w-3xl text-center">
           <h2 className="font-heading text-3xl md:text-4xl font-bold text-white leading-tight">
             {title}

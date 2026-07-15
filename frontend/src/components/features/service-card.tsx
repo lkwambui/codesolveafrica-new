@@ -31,15 +31,15 @@ export function ServiceCard({ title, description, icon, slug, index = 0 }: Servi
       transition={{ duration: 0.5, delay: index * 0.1 }}
     >
       <Link href={`/services/${slug}`} className="group block h-full">
-        <Card className="h-full p-6 group-hover:border-primary-blue/30 transition-all">
+        <Card className="h-full p-6 group-hover:border-primary-blue/30 transition-all dark:bg-primary-800 dark:border-white/10">
           <CardContent className="p-0">
             <div className="mb-4 flex h-12 w-12 items-center justify-center rounded-xl bg-primary-blue/10 text-primary-blue group-hover:bg-primary-blue group-hover:text-white transition-all duration-300">
               <Icon className="h-6 w-6" />
             </div>
-            <h3 className="font-heading text-lg font-semibold text-primary-text group-hover:text-primary-blue transition-colors">
+            <h3 className="font-heading text-lg font-semibold text-primary-text group-hover:text-primary-blue transition-colors dark:text-white">
               {title}
             </h3>
-            <p className="mt-2 text-sm text-secondary-text leading-relaxed line-clamp-2">
+            <p className="mt-2 text-sm text-secondary-text leading-relaxed line-clamp-2 dark:text-white/60">
               {description}
             </p>
             <span className={cn(

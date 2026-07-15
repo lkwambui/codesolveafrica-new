@@ -39,8 +39,8 @@ export function TimelineItem({ step, title, description, icon, index }: Timeline
         <span className="text-xs font-bold text-primary-blue uppercase tracking-wider">
           Step {step}
         </span>
-        <h3 className="font-heading text-xl font-semibold text-primary-text mt-1">{title}</h3>
-        <p className="mt-2 text-sm text-secondary-text leading-relaxed">{description}</p>
+        <h3 className="font-heading text-xl font-semibold text-primary-text mt-1 dark:text-white">{title}</h3>
+        <p className="mt-2 text-sm text-secondary-text leading-relaxed dark:text-white/60">{description}</p>
       </div>
 
       <div className="relative flex-shrink-0">

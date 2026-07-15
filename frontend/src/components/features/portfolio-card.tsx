@@ -32,16 +32,16 @@ export function PortfolioCard({
       transition={{ duration: 0.5, delay: index * 0.1 }}
     >
       <Link href={`/portfolio/${slug}`} className="group block">
-        <div className="relative overflow-hidden rounded-2xl border border-border bg-white p-8 transition-all duration-300 hover:shadow-elevated hover:border-primary-blue/20">
+        <div className="relative overflow-hidden rounded-2xl border border-border bg-white p-8 transition-all duration-300 hover:shadow-elevated hover:border-primary-blue/20 dark:bg-primary-800 dark:border-white/10">
           <div className="flex items-start justify-between">
             <Badge variant="primary">{category}</Badge>
             <ArrowUpRight className="h-5 w-5 text-secondary-text group-hover:text-primary-blue group-hover:translate-x-1 group-hover:-translate-y-1 transition-all" />
           </div>
-          <h3 className="mt-4 font-heading text-xl font-semibold text-primary-text group-hover:text-primary-blue transition-colors">
+          <h3 className="mt-4 font-heading text-xl font-semibold text-primary-text group-hover:text-primary-blue transition-colors dark:text-white">
             {title}
           </h3>
           <p className="mt-1 text-sm font-medium text-primary-blue">{client}</p>
-          <p className="mt-3 text-sm text-secondary-text leading-relaxed line-clamp-2">
+          <p className="mt-3 text-sm text-secondary-text leading-relaxed line-clamp-2 dark:text-white/60">
             {shortDescription}
           </p>
         </div>

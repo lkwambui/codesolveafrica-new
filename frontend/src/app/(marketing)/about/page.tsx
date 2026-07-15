@@ -24,19 +24,18 @@ export default function AboutPage() {
           />
           <div className="max-w-3xl mx-auto mt-12 space-y-6 text-secondary-text leading-relaxed">
             <p>
-              Founded in 2010, CodeSolveAfrica has grown from a small team of passionate engineers
-              into one of Africa&apos;s leading enterprise technology companies. We partner with organizations
-              across the globe to design, build, and scale digital solutions that drive real business impact.
+              CodeSolveAfrica is a Nairobi-based software engineering company founded by a team of
+              passionate technologists who believe in the power of African innovation. We partner with
+              businesses to design, build, and scale digital solutions that drive real impact.
             </p>
             <p>
-              Our team of 350+ engineers, designers, and consultants brings together deep technical
-              expertise with intimate knowledge of African markets. We understand the unique challenges
-              and opportunities of doing business in Africa and build solutions that work in this dynamic environment.
+              Our team brings together deep technical expertise with intimate knowledge of African markets.
+              We understand the unique challenges and opportunities of doing business in Africa and build
+              solutions that work in this dynamic environment.
             </p>
             <p>
-              We&apos;ve delivered 500+ projects across 50+ countries, serving everything from fast-growing
-              startups to Fortune 500 enterprises. Our work spans fintech, healthcare, agriculture,
-              telecommunications, and government sectors.
+              We&apos;ve delivered projects across fintech, healthcare, e-commerce, and more — serving
+              startups and growing enterprises with practical, high-quality software engineering.
             </p>
           </div>
         </Container>
@@ -51,7 +50,7 @@ export default function AboutPage() {
             title="Meet Our Team"
             description="World-class talent with global experience and local expertise."
           />
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-4xl mx-auto">
             {teamMembers.map((member, index) => (
               <TeamCard key={member.id} {...member} index={index} />
             ))}

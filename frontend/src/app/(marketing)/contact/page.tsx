@@ -82,20 +82,13 @@ export default function ContactPage() {
 
               <div className="rounded-2xl border border-border bg-white p-8">
                 <h3 className="font-heading text-lg font-semibold text-primary-text mb-4">
-                  Office Locations
+                  Office
                 </h3>
                 <div className="space-y-4">
-                  {[
-                    { city: "Nairobi, Kenya", desc: "Headquarters" },
-                    { city: "Lagos, Nigeria", desc: "West Africa Hub" },
-                    { city: "Cape Town, SA", desc: "Southern Africa Hub" },
-                    { city: "Kigali, Rwanda", desc: "East Africa Hub" },
-                  ].map((loc) => (
-                    <div key={loc.city}>
-                      <p className="text-sm font-medium text-primary-text">{loc.city}</p>
-                      <p className="text-xs text-secondary-text">{loc.desc}</p>
-                    </div>
-                  ))}
+                  <div>
+                    <p className="text-sm font-medium text-primary-text">Nairobi, Kenya</p>
+                    <p className="text-xs text-secondary-text">Headquarters</p>
+                  </div>
                 </div>
               </div>
             </div>

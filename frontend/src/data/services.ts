@@ -512,6 +512,72 @@ export const services: Service[] = [
       { title: "E-Commerce QA Automation", description: "Achieved 95% automated test coverage" },
     ],
   },
+  {
+    id: "mpesa-integration",
+    slug: "mpesa-integration",
+    title: "M-Pesa Integration",
+    shortDescription: "Seamless M-Pesa payment integration for businesses of all sizes.",
+    description: "Integrate Kenya's leading mobile money platform into your business. We provide end-to-end M-Pesa integration services including Daraja API integration, STK Push, B2C payments, and transaction reconciliation.",
+    icon: "Smartphone",
+    benefits: [
+      "Reach millions of M-Pesa users",
+      "Real-time payment processing",
+      "Reduced cash handling costs",
+      "Automated reconciliation",
+      "Enhanced customer convenience",
+    ],
+    features: [
+      "Daraja API integration",
+      "STK Push (Lipia Na M-Pesa)",
+      "B2C payments and disbursements",
+      "Transaction status callbacks",
+      "Automated reconciliation reports",
+      "Payment link generation",
+    ],
+    techStack: ["Node.js", "Python", "PHP", "Daraja API", "PostgreSQL", "Redis", "Webhooks"],
+    process: [
+      { step: 1, title: "Requirements", description: "Understand payment flow and business rules" },
+      { step: 2, title: "Integration", description: "Connect to Daraja API and set up endpoints" },
+      { step: 3, title: "Testing", description: "End-to-end testing in sandbox environment" },
+      { step: 4, title: "Go Live", description: "Deploy to production and monitor transactions" },
+    ],
+    caseStudies: [
+      { title: "Retail POS Integration", description: "Processed 10,000+ M-Pesa transactions monthly" },
+    ],
+  },
+  {
+    id: "etims-integration",
+    slug: "etims-integration",
+    title: "eTIMS Integration",
+    shortDescription: "KRA eTIMS compliance integration for businesses and accounting systems.",
+    description: "Ensure seamless compliance with KRA's electronic Tax Invoice Management System. We integrate eTIMS into your existing POS, ERP, or accounting systems for automated tax reporting and invoicing.",
+    icon: "FileText",
+    benefits: [
+      "Full KRA compliance",
+      "Automated tax invoice generation",
+      "Real-time invoice transmission",
+      "Reduced manual errors",
+      "Audit-ready records",
+    ],
+    features: [
+      "eTIMS API integration",
+      "Automated invoice generation",
+      "Real-time KRA submission",
+      "Credit and debit note management",
+      "Sales summary reconciliation",
+      "Multi-branch support",
+    ],
+    techStack: ["Node.js", "Python", "REST APIs", "PostgreSQL", "RabbitMQ", "Docker"],
+    process: [
+      { step: 1, title: "Assessment", description: "Evaluate current invoicing and compliance setup" },
+      { step: 2, title: "Integration", description: "Connect systems to eTIMS API endpoints" },
+      { step: 3, title: "Testing", description: "Validate invoice transmission and compliance" },
+      { step: 4, title: "Deployment", description: "Go live with monitoring and support" },
+    ],
+    caseStudies: [
+      { title: "Retail Chain Compliance", description: "Automated eTIMS for 50+ retail outlets" },
+    ],
+  },
 ];
 
 export function getServiceBySlug(slug: string) {

@@ -12,7 +12,7 @@ export function PortfolioPreview() {
   const featured = portfolioItems.slice(0, 3);
 
   return (
-    <section className="py-20 bg-surface">
+    <section className="py-20 bg-surface dark:bg-primary-800/50">
       <Container>
         <SectionHeader
           subtitle="Our Work"
@@ -33,7 +33,7 @@ export function PortfolioPreview() {
           ))}
         </div>
         <div className="mt-12 text-center">
-          <Button asChild variant="outline" size="lg">
+          <Button asChild variant="accent" size="lg">
             <Link href="/portfolio">
               View All Projects <ArrowRight className="ml-2 h-4 w-4" />
             </Link>

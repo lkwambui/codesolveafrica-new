@@ -83,7 +83,7 @@ export interface TeamMember {
   role: string;
   bio: string;
   image: string;
-  socials: { linkedin?: string; twitter?: string; github?: string };
+  socials: { tiktok?: string; facebook?: string; instagram?: string; youtube?: string };
 }
 
 export interface Testimonial {

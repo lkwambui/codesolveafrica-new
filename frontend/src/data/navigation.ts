@@ -84,6 +84,16 @@ export const mainNavigation: NavItem[] = [
         href: "/services/quality-assurance",
         description: "Comprehensive testing and quality engineering",
       },
+      {
+        label: "M-Pesa Integration",
+        href: "/services/mpesa-integration",
+        description: "Seamless mobile money integration",
+      },
+      {
+        label: "eTIMS Integration",
+        href: "/services/etims-integration",
+        description: "KRA compliance and tax invoicing",
+      },
     ],
   },
   {

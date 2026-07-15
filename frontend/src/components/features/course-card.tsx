@@ -43,7 +43,7 @@ export function CourseCard({
       transition={{ duration: 0.5, delay: index * 0.1 }}
     >
       <Link href={`/academy/courses/${slug}`} className="group block h-full">
-        <Card className="h-full group-hover:border-primary-blue/30 transition-all">
+        <Card className="h-full group-hover:border-primary-blue/30 transition-all dark:bg-primary-800 dark:border-white/10">
           <CardContent className="p-6">
             <div className="flex items-center justify-between mb-3">
               <Badge variant={levelColors[level] || "primary"}>{level}</Badge>
@@ -51,10 +51,10 @@ export function CourseCard({
                 KSh {price.toLocaleString()}
               </span>
             </div>
-            <h3 className="font-heading text-lg font-semibold text-primary-text group-hover:text-primary-blue transition-colors">
+            <h3 className="font-heading text-lg font-semibold text-primary-text group-hover:text-primary-blue transition-colors dark:text-white">
               {title}
             </h3>
-            <p className="mt-2 text-sm text-secondary-text line-clamp-2 leading-relaxed">
+            <p className="mt-2 text-sm text-secondary-text line-clamp-2 leading-relaxed dark:text-white/60">
               {shortDescription}
             </p>
             <div className="mt-4 flex items-center gap-4 text-xs text-secondary-text">

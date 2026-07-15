@@ -12,7 +12,7 @@ export function AcademyPreview() {
   const featured = courses.slice(0, 3);
 
   return (
-    <section className="py-20">
+    <section className="py-20 dark:bg-primary">
       <Container>
         <SectionHeader
           subtitle="CodeSolveAfrica Academy"

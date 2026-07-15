@@ -7,10 +7,10 @@ export function TrustedBy() {
   const doubledPartners = [...partners, ...partners];
 
   return (
-    <section className="py-16 bg-surface border-y border-border overflow-hidden">
+    <section className="py-16 bg-surface border-y border-border overflow-hidden dark:bg-primary-800/50 dark:border-white/10">
       <Container>
         <p className="text-center text-xs font-semibold text-secondary-text uppercase tracking-wider mb-8">
-          Trusted by Industry Leaders
+          Trusted by Growing Companies
         </p>
         <div className="relative">
           <div className="flex gap-16 animate-scroll">

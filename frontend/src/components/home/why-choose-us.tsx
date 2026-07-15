@@ -40,7 +40,7 @@ const features = [
 
 export function WhyChooseUs() {
   return (
-    <section className="py-20">
+    <section className="py-20 dark:bg-primary">
       <Container>
         <SectionHeader
           subtitle="Why CodeSolveAfrica"
@@ -64,10 +64,10 @@ export function WhyChooseUs() {
                     <Icon className="h-6 w-6" />
                   </div>
                   <div>
-                    <h3 className="font-heading text-lg font-semibold text-primary-text">
+                    <h3 className="font-heading text-lg font-semibold text-primary-text dark:text-white">
                       {feature.title}
                     </h3>
-                    <p className="mt-1.5 text-sm text-secondary-text leading-relaxed">
+                    <p className="mt-1.5 text-sm text-secondary-text leading-relaxed dark:text-white/60">
                       {feature.description}
                     </p>
                   </div>
