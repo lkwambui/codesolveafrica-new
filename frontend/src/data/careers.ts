@@ -30,7 +30,7 @@ export const careers: Career[] = [
       "Health and dental insurance",
       "Home office setup allowance",
     ],
-    salary: "$80K - $120K",
+    salary: "KSh 1.5M - 2.5M/yr",
   },
   {
     id: "backend-engineer-python",
@@ -61,7 +61,7 @@ export const careers: Career[] = [
       "Annual conference budget",
       "Wellness program",
     ],
-    salary: "$60K - $100K",
+    salary: "KSh 1M - 2M/yr",
   },
   {
     id: "ai-ml-engineer",
@@ -92,7 +92,7 @@ export const careers: Career[] = [
       "Conference speaking opportunities",
       "Flexible schedule",
     ],
-    salary: "$90K - $150K",
+    salary: "KSh 1.8M - 3M/yr",
   },
   {
     id: "cloud-devops-engineer",
@@ -123,7 +123,7 @@ export const careers: Career[] = [
       "Home office budget",
       "Health coverage",
     ],
-    salary: "$70K - $110K",
+    salary: "KSh 1.4M - 2.2M/yr",
   },
   {
     id: "ui-ux-designer",
@@ -154,7 +154,7 @@ export const careers: Career[] = [
       "Flexible hours",
       "Creative studio environment",
     ],
-    salary: "$50K - $80K",
+    salary: "KSh 800K - 1.5M/yr",
   },
   {
     id: "cybersecurity-analyst",
@@ -185,7 +185,7 @@ export const careers: Career[] = [
       "On-call compensation",
       "Health and wellness benefits",
     ],
-    salary: "$60K - $95K",
+    salary: "KSh 1M - 1.8M/yr",
   },
   {
     id: "technical-project-manager",
@@ -216,7 +216,7 @@ export const careers: Career[] = [
       "Flexible working arrangements",
       "Health and dental coverage",
     ],
-    salary: "$70K - $100K",
+    salary: "KSh 1.4M - 2M/yr",
   },
   {
     id: "sales-engineer",
@@ -247,7 +247,7 @@ export const careers: Career[] = [
       "Conference budget",
       "Health coverage",
     ],
-    salary: "$60K - $90K + Commission",
+    salary: "KSh 1M - 1.8M + Commission",
   },
 ];
 

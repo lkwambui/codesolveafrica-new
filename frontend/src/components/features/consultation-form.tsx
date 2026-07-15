@@ -109,7 +109,7 @@ export function ConsultationForm() {
               <SelectValue placeholder="Select budget" />
             </SelectTrigger>
             <SelectContent>
-              {["Under $10K", "$10K - $25K", "$25K - $50K", "$50K - $100K", "$100K+"].map((b) => (
+              {["Under KSh 500K", "KSh 500K - 1M", "KSh 1M - 3M", "KSh 3M - 5M", "KSh 5M+"].map((b) => (
                 <SelectItem key={b} value={b}>{b}</SelectItem>
               ))}
             </SelectContent>
