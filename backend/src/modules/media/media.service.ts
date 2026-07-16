@@ -5,7 +5,7 @@ import {
   Logger,
 } from '@nestjs/common';
 import { ConfigService } from '@nestjs/config';
-import { PrismaService } from '@prisma/prisma.service';
+import { PrismaService } from '@database/prisma.service';
 import { QueryMediaDto } from './media.dto';
 import { parsePagination, buildPaginationMeta } from '@common/utils/helpers';
 import { v2 as cloudinary } from 'cloudinary';

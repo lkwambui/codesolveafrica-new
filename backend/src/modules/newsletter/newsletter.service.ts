@@ -4,7 +4,7 @@ import {
   NotFoundException,
   Logger,
 } from '@nestjs/common';
-import { PrismaService } from '@prisma/prisma.service';
+import { PrismaService } from '@database/prisma.service';
 import { SubscribeNewsletterDto, QueryNewsletterSubscriberDto } from './newsletter.dto';
 import { parsePagination, buildPaginationMeta } from '@common/utils/helpers';
 

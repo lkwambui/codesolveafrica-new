@@ -1,5 +1,5 @@
 import { Injectable, NotFoundException, Logger } from '@nestjs/common';
-import { PrismaService } from '@prisma/prisma.service';
+import { PrismaService } from '@database/prisma.service';
 import { CreatePageDto, UpdatePageDto, QueryPageDto } from './pages.dto';
 import { parsePagination, buildPaginationMeta, generateSlug } from '@common/utils/helpers';
 

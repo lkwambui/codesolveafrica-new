@@ -23,7 +23,7 @@
       "@common/*": ["src/common/*"],
       "@config/*": ["src/config/*"],
       "@shared/*": ["src/shared/*"],
-      "@prisma/*": ["src/prisma/*"]
+      "@database/*": ["src/prisma/*"]
     }
   },
   "include": ["src/**/*", "prisma/**/*", "test/**/*"]

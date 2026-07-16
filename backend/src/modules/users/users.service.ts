@@ -5,7 +5,7 @@ import {
   Logger,
 } from '@nestjs/common';
 import * as bcrypt from 'bcrypt';
-import { PrismaService } from '@prisma/prisma.service';
+import { PrismaService } from '@database/prisma.service';
 import { CreateUserDto, UpdateUserDto, QueryUserDto } from './users.dto';
 import { UserResponse, UserListResponse } from './interfaces/user.interface';
 import { parsePagination, buildPaginationMeta, excludeFields } from '@common/utils/helpers';

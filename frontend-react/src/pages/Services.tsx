@@ -1,0 +1,36 @@
+import { Container } from "@/components/ui/container";
+import { SectionHeader } from "@/components/ui/section-header";
+import { ServiceCard } from "@/components/features/service-card";
+import { CTASection } from "@/components/home/cta-section";
+import { services } from "@/data/services";
+import { useDocumentTitle } from '@/lib/use-document-title';
+
+export default function ServicesPage() {
+  useDocumentTitle('Services');
+  return (
+    <>
+      <section className="pt-32 pb-20 bg-gradient-to-b from-surface to-white dark:from-primary dark:to-primary-800">
+        <Container>
+          <SectionHeader
+            subtitle="Our Services"
+            title="Enterprise Technology Solutions"
+            description="End-to-end technology services designed to transform your business and accelerate growth."
+          />
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            {services.map((service, index) => (
+              <ServiceCard
+                key={service.id}
+                title={service.title}
+                description={service.shortDescription}
+                icon={service.icon}
+                slug={service.slug}
+                index={index}
+              />
+            ))}
+          </div>
+        </Container>
+      </section>
+      <CTASection />
+    </>
+  );
+}
