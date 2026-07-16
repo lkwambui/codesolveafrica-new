@@ -10,14 +10,25 @@ import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Label } from "@/components/ui/label";
 import { toast } from "sonner";
+import { api } from "@/lib/api";
+
+const MAX_FILE_SIZE = 10 * 1024 * 1024;
+const ACCEPTED_FILE_TYPES = [
+  "application/pdf",
+  "application/msword",
+  "application/vnd.openxmlformats-officedocument.wordprocessingml.document",
+];
 
 const applicationSchema = z.object({
-  name: z.string().min(2),
-  email: z.string().email(),
-  phone: z.string().min(8),
-  position: z.string().min(2),
+  name: z.string().min(2, "Name must be at least 2 characters").max(100),
+  email: z.string().email("Invalid email address"),
+  phone: z.string().min(8, "Phone must be at least 8 characters").max(20),
+  position: z.string().min(2, "Position is required").max(100),
   portfolio: z.string().url("Invalid URL").optional().or(z.literal("")),
-  coverLetter: z.string().min(50, "Cover letter must be at least 50 characters"),
+  coverLetter: z
+    .string()
+    .min(50, "Cover letter must be at least 50 characters")
+    .max(5000, "Cover letter must not exceed 5000 characters"),
 });
 
 type ApplicationFormValues = z.infer<typeof applicationSchema>;
@@ -35,7 +46,7 @@ export function ApplicationForm({ position }: { position?: string }) {
 
   async function onSubmit(data: ApplicationFormValues) {
     try {
-      await new Promise((resolve) => setTimeout(resolve, 1500));
+      await api.post("/applications", data);
       toast.success("Application submitted successfully! We'll review and get back to you.");
       reset();
     } catch {
@@ -96,13 +107,13 @@ export function ApplicationForm({ position }: { position?: string }) {
 
       <div className="space-y-2">
         <Label>Resume / CV</Label>
-        <div className="flex items-center justify-center border-2 border-dashed border-border rounded-lg p-8 hover:border-primary-blue/50 transition-colors cursor-pointer">
+          <div className="flex items-center justify-center border-2 border-dashed border-border rounded-lg p-8 hover:border-primary-blue/50 transition-colors cursor-pointer dark:border-white/20 dark:hover:border-primary-blue/50">
           <div className="text-center">
-            <Upload className="mx-auto h-8 w-8 text-secondary-text mb-2" />
-            <p className="text-sm text-secondary-text">
+            <Upload className="mx-auto h-8 w-8 text-secondary-text mb-2 dark:text-white/60" />
+            <p className="text-sm text-secondary-text dark:text-white/60">
               Drop your resume here or click to browse
             </p>
-            <p className="text-xs text-secondary-text mt-1">PDF, DOC (Max 10MB)</p>
+            <p className="text-xs text-secondary-text mt-1 dark:text-white/40">PDF, DOC (Max 10MB)</p>
           </div>
         </div>
       </div>

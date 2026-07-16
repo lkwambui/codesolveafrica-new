@@ -7,6 +7,7 @@ interface SectionHeaderProps {
   description?: string;
   center?: boolean;
   className?: string;
+  dark?: boolean;
 }
 
 export function SectionHeader({
@@ -15,6 +16,7 @@ export function SectionHeader({
   description,
   center = true,
   className,
+  dark,
 }: SectionHeaderProps) {
   return (
     <div
@@ -25,15 +27,24 @@ export function SectionHeader({
       )}
     >
       {subtitle && (
-        <span className="inline-block text-sm font-semibold uppercase tracking-wider mb-3 text-primary-blue">
+        <span className={cn(
+          "inline-block text-sm font-semibold uppercase tracking-wider mb-3",
+          dark ? "text-primary-blue" : "text-primary-blue"
+        )}>
           {subtitle}
         </span>
       )}
-      <h2 className="font-heading text-3xl md:text-4xl lg:text-5xl font-bold text-primary-text leading-tight dark:text-white">
+      <h2 className={cn(
+        "font-heading text-3xl md:text-4xl lg:text-5xl font-bold leading-tight",
+        dark ? "text-white" : "text-primary-text dark:text-white"
+      )}>
         {title}
       </h2>
       {description && (
-        <p className="mt-4 text-lg text-secondary-text leading-relaxed max-w-2xl mx-auto dark:text-white/60">
+        <p className={cn(
+          "mt-4 text-lg leading-relaxed max-w-2xl mx-auto",
+          dark ? "text-white/70" : "text-secondary-text dark:text-white/60"
+        )}>
           {description}
         </p>
       )}

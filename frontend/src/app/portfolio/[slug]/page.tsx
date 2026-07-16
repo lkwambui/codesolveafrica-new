@@ -30,7 +30,7 @@ export default async function PortfolioDetailPage({ params }: { params: Promise<
 
   return (
     <>
-      <section className="pt-28 pb-20 bg-gradient-to-b from-surface to-white">
+      <section className="pt-28 pb-20 bg-gradient-to-b from-surface to-white dark:from-primary dark:to-primary-800">
         <Container>
           <Breadcrumb
             items={[
@@ -44,58 +44,58 @@ export default async function PortfolioDetailPage({ params }: { params: Promise<
             <div className="lg:col-span-2">
               <div className="flex items-center gap-3 mb-4">
                 <Badge variant="primary">{item.category}</Badge>
-                <span className="text-sm text-secondary-text">{item.client}</span>
+                <span className="text-sm text-secondary-text dark:text-white/60">{item.client}</span>
               </div>
 
-              <h1 className="font-heading text-3xl md:text-4xl font-bold text-primary-text leading-tight">
+              <h1 className="font-heading text-3xl md:text-4xl font-bold text-primary-text dark:text-white leading-tight">
                 {item.title}
               </h1>
-              <p className="mt-4 text-lg text-secondary-text leading-relaxed">
+              <p className="mt-4 text-lg text-secondary-text dark:text-white/60 leading-relaxed">
                 {item.description}
               </p>
 
               <div className="mt-10">
-                <h2 className="font-heading text-xl font-semibold text-primary-text mb-4">The Challenge</h2>
-                <p className="text-secondary-text leading-relaxed">{item.challenge}</p>
+                <h2 className="font-heading text-xl font-semibold text-primary-text dark:text-white mb-4">The Challenge</h2>
+                <p className="text-secondary-text dark:text-white/60 leading-relaxed">{item.challenge}</p>
               </div>
 
               <div className="mt-8">
-                <h2 className="font-heading text-xl font-semibold text-primary-text mb-4">Our Solution</h2>
-                <p className="text-secondary-text leading-relaxed">{item.solution}</p>
+                <h2 className="font-heading text-xl font-semibold text-primary-text dark:text-white mb-4">Our Solution</h2>
+                <p className="text-secondary-text dark:text-white/60 leading-relaxed">{item.solution}</p>
               </div>
 
               {item.testimonial && (
-                <div className="mt-10 rounded-2xl border border-border bg-white p-8">
+                <div className="mt-10 rounded-2xl border border-border dark:border-white/10 bg-white dark:bg-primary-900 p-8">
                   <div className="flex items-center gap-0.5 mb-4">
                     {Array.from({ length: 5 }).map((_, i) => (
                       <Star key={i} className="h-4 w-4 text-warning fill-warning" />
                     ))}
                   </div>
-                  <blockquote className="text-base text-primary-text leading-relaxed">
+                  <blockquote className="text-base text-primary-text dark:text-white leading-relaxed">
                     &ldquo;{item.testimonial.quote}&rdquo;
                   </blockquote>
                   <div className="mt-4">
-                    <p className="font-semibold text-primary-text">{item.testimonial.author}</p>
-                    <p className="text-sm text-secondary-text">{item.testimonial.role}</p>
+                    <p className="font-semibold text-primary-text dark:text-white">{item.testimonial.author}</p>
+                    <p className="text-sm text-secondary-text dark:text-white/60">{item.testimonial.role}</p>
                   </div>
                 </div>
               )}
             </div>
 
             <div className="space-y-6">
-              <div className="rounded-2xl border border-border bg-white p-6 sticky top-24">
-                <h3 className="font-heading text-lg font-semibold text-primary-text mb-5">Results</h3>
+              <div className="rounded-2xl border border-border dark:border-white/10 bg-white dark:bg-primary-900 p-6 sticky top-24">
+                <h3 className="font-heading text-lg font-semibold text-primary-text dark:text-white mb-5">Results</h3>
                 <div className="space-y-4">
                   {item.results.map((result) => (
-                    <div key={result.metric} className="text-center p-4 rounded-xl bg-surface">
+                    <div key={result.metric} className="text-center p-4 rounded-xl bg-surface dark:bg-primary-800">
                       <p className="font-heading text-2xl font-bold text-primary-blue">{result.value}</p>
-                      <p className="text-xs text-secondary-text">{result.metric}</p>
+                      <p className="text-xs text-secondary-text dark:text-white/60">{result.metric}</p>
                     </div>
                   ))}
                 </div>
 
-                <div className="mt-6 pt-6 border-t border-border">
-                  <h4 className="text-sm font-semibold text-primary-text mb-3">Technologies</h4>
+                <div className="mt-6 pt-6 border-t border-border dark:border-white/10">
+                  <h4 className="text-sm font-semibold text-primary-text dark:text-white mb-3">Technologies</h4>
                   <div className="flex flex-wrap gap-2">
                     {item.technologies.map((tech) => (
                       <Badge key={tech} variant="outline">{tech}</Badge>
@@ -103,7 +103,7 @@ export default async function PortfolioDetailPage({ params }: { params: Promise<
                   </div>
                 </div>
 
-                <div className="mt-6 pt-6 border-t border-border space-y-3">
+                <div className="mt-6 pt-6 border-t border-border dark:border-white/10 space-y-3">
                   <Button asChild className="w-full">
                     <Link href="/contact">
                       Start Similar Project <ArrowUpRight className="ml-2 h-4 w-4" />

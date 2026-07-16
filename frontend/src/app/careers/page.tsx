@@ -19,7 +19,7 @@ const departments = Array.from(new Set(careers.map((c) => c.department)));
 export default function CareersPage() {
   return (
     <>
-      <section className="pt-32 pb-20 bg-gradient-to-b from-surface to-white">
+      <section className="pt-32 pb-20 bg-gradient-to-b from-surface to-white dark:from-primary dark:to-primary-800">
         <Container>
           <SectionHeader
             subtitle="Careers"
@@ -37,7 +37,7 @@ export default function CareersPage() {
               ].map((stat) => (
                 <div key={stat.label}>
                   <p className="font-heading text-2xl font-bold text-primary-blue">{stat.value}</p>
-                  <p className="text-xs text-secondary-text">{stat.label}</p>
+                  <p className="text-xs text-secondary-text dark:text-white/60">{stat.label}</p>
                 </div>
               ))}
             </div>
@@ -48,7 +48,7 @@ export default function CareersPage() {
               const deptCareers = careers.filter((c) => c.department === dept);
               return (
                 <div key={dept}>
-                  <h2 className="font-heading text-2xl font-semibold text-primary-text mb-6">
+                  <h2 className="font-heading text-2xl font-semibold text-primary-text dark:text-white mb-6">
                     {dept}
                   </h2>
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
@@ -58,12 +58,12 @@ export default function CareersPage() {
                           <CardContent className="p-6">
                             <div className="flex items-start justify-between mb-3">
                               <Badge variant="primary">{career.type}</Badge>
-                              <ArrowRight className="h-4 w-4 text-secondary-text group-hover:text-primary-blue group-hover:translate-x-1 transition-all" />
+                              <ArrowRight className="h-4 w-4 text-secondary-text dark:text-white/60 group-hover:text-primary-blue dark:group-hover:text-primary-blue group-hover:translate-x-1 transition-all" />
                             </div>
-                            <h3 className="font-heading text-lg font-semibold text-primary-text group-hover:text-primary-blue transition-colors">
+                            <h3 className="font-heading text-lg font-semibold text-primary-text dark:text-white group-hover:text-primary-blue dark:group-hover:text-primary-blue transition-colors">
                               {career.title}
                             </h3>
-                            <div className="mt-3 flex flex-wrap items-center gap-3 text-xs text-secondary-text">
+                            <div className="mt-3 flex flex-wrap items-center gap-3 text-xs text-secondary-text dark:text-white/60">
                               <span className="flex items-center gap-1">
                                 <MapPin className="h-3.5 w-3.5" /> {career.location}
                               </span>
@@ -86,7 +86,7 @@ export default function CareersPage() {
         </Container>
       </section>
 
-      <section className="py-20 bg-surface">
+      <section className="py-20 bg-surface dark:bg-primary-800/50">
         <Container>
           <SectionHeader
             subtitle="Life at CodeSolveAfrica"
@@ -103,8 +103,8 @@ export default function CareersPage() {
               { title: "Innovation Time", description: "Dedicated time for innovation projects, open source contributions, and R&D." },
             ].map((item) => (
               <div key={item.title} className="text-center p-6">
-                <h3 className="font-heading text-lg font-semibold text-primary-text">{item.title}</h3>
-                <p className="mt-2 text-sm text-secondary-text">{item.description}</p>
+                <h3 className="font-heading text-lg font-semibold text-primary-text dark:text-white">{item.title}</h3>
+                <p className="mt-2 text-sm text-secondary-text dark:text-white/60">{item.description}</p>
               </div>
             ))}
           </div>

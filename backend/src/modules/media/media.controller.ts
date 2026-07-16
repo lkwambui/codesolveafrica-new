@@ -14,6 +14,7 @@ import {
   BadRequestException,
 } from '@nestjs/common';
 import { FileInterceptor, FilesInterceptor } from '@nestjs/platform-express';
+import { memoryStorage } from 'multer';
 import { ApiTags, ApiOperation, ApiBearerAuth, ApiConsumes, ApiBody, ApiResponse } from '@nestjs/swagger';
 import { UserRole } from '@prisma/client';
 import { MediaService } from './media.service';
@@ -30,7 +31,23 @@ export class MediaController {
 
   @Post('upload')
   @Roles(UserRole.SUPER_ADMIN, UserRole.ADMIN, UserRole.EDITOR)
-  @UseInterceptors(FileInterceptor('file'))
+  @UseInterceptors(FileInterceptor('file', {
+    storage: memoryStorage(),
+    limits: { fileSize: 10 * 1024 * 1024 },
+    fileFilter: (_req, file, cb) => {
+      const allowedMimes = [
+        'image/jpeg', 'image/png', 'image/webp', 'image/gif',
+        'application/pdf',
+        'video/mp4', 'video/webm',
+        'audio/mpeg', 'audio/wav',
+      ];
+      if (allowedMimes.includes(file.mimetype)) {
+        cb(null, true);
+      } else {
+        cb(new BadRequestException(`File type ${file.mimetype} is not allowed`), false);
+      }
+    },
+  }))
   @HttpCode(HttpStatus.CREATED)
   @ApiOperation({ summary: 'Upload a single file' })
   @ApiConsumes('multipart/form-data')
@@ -57,7 +74,23 @@ export class MediaController {
 
   @Post('upload-multiple')
   @Roles(UserRole.SUPER_ADMIN, UserRole.ADMIN, UserRole.EDITOR)
-  @UseInterceptors(FilesInterceptor('files', 10))
+  @UseInterceptors(FilesInterceptor('files', 10, {
+    storage: memoryStorage(),
+    limits: { fileSize: 10 * 1024 * 1024 },
+    fileFilter: (_req, file, cb) => {
+      const allowedMimes = [
+        'image/jpeg', 'image/png', 'image/webp', 'image/gif',
+        'application/pdf',
+        'video/mp4', 'video/webm',
+        'audio/mpeg', 'audio/wav',
+      ];
+      if (allowedMimes.includes(file.mimetype)) {
+        cb(null, true);
+      } else {
+        cb(new BadRequestException(`File type ${file.mimetype} is not allowed`), false);
+      }
+    },
+  }))
   @HttpCode(HttpStatus.CREATED)
   @ApiOperation({ summary: 'Upload multiple files (max 10)' })
   @ApiConsumes('multipart/form-data')

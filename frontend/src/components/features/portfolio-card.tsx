@@ -2,10 +2,22 @@
 
 import * as React from "react";
 import Link from "next/link";
+import Image from "next/image";
 import { motion } from "framer-motion";
 import { ArrowUpRight } from "lucide-react";
 import { Badge } from "@/components/ui/badge";
-import { cn } from "@/lib/utils";
+
+const categoryImages: Record<string, string> = {
+  FinTech: "/portfolio/fintech.jpg",
+  AgriTech: "/portfolio/agritech.jpg",
+  IoT: "/portfolio/iot.jpg",
+  "Data Analytics": "/portfolio/data-analytics.jpg",
+  EdTech: "/portfolio/edtech.jpg",
+};
+
+function getCategoryImage(category: string) {
+  return categoryImages[category] || "/portfolio/fintech.jpg";
+}
 
 interface PortfolioCardProps {
   title: string;
@@ -32,18 +44,32 @@ export function PortfolioCard({
       transition={{ duration: 0.5, delay: index * 0.1 }}
     >
       <Link href={`/portfolio/${slug}`} className="group block">
-        <div className="relative overflow-hidden rounded-2xl border border-border bg-white p-8 transition-all duration-300 hover:shadow-elevated hover:border-primary-blue/20 dark:bg-primary-800 dark:border-white/10">
-          <div className="flex items-start justify-between">
-            <Badge variant="primary">{category}</Badge>
-            <ArrowUpRight className="h-5 w-5 text-secondary-text group-hover:text-primary-blue group-hover:translate-x-1 group-hover:-translate-y-1 transition-all" />
+        <div className="relative overflow-hidden rounded-2xl border border-border bg-white transition-all duration-300 hover:shadow-elevated hover:border-primary-blue/20 dark:bg-primary-800 dark:border-white/10">
+          <div className="relative h-48 overflow-hidden">
+            <Image
+              src={getCategoryImage(category)}
+              alt={title}
+              fill
+              sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+              className="object-cover transition-transform duration-500 group-hover:scale-110"
+            />
+            <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent" />
+            <div className="absolute top-4 left-4">
+              <Badge variant="primary">{category}</Badge>
+            </div>
+            <div className="absolute top-4 right-4 flex h-8 w-8 items-center justify-center rounded-full bg-white/90 text-primary-text opacity-0 group-hover:opacity-100 transition-opacity">
+              <ArrowUpRight className="h-4 w-4" />
+            </div>
           </div>
-          <h3 className="mt-4 font-heading text-xl font-semibold text-primary-text group-hover:text-primary-blue transition-colors dark:text-white">
-            {title}
-          </h3>
-          <p className="mt-1 text-sm font-medium text-primary-blue">{client}</p>
-          <p className="mt-3 text-sm text-secondary-text leading-relaxed line-clamp-2 dark:text-white/60">
-            {shortDescription}
-          </p>
+          <div className="p-6">
+            <p className="text-sm font-medium text-primary-blue">{client}</p>
+            <h3 className="mt-1 font-heading text-xl font-semibold text-primary-text group-hover:text-primary-blue transition-colors dark:text-white">
+              {title}
+            </h3>
+            <p className="mt-2 text-sm text-secondary-text leading-relaxed line-clamp-2 dark:text-white/60">
+              {shortDescription}
+            </p>
+          </div>
         </div>
       </Link>
     </motion.div>

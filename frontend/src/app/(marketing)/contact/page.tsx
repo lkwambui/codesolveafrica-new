@@ -15,7 +15,7 @@ export const metadata: Metadata = {
 export default function ContactPage() {
   return (
     <>
-      <section className="pt-32 pb-20 bg-gradient-to-b from-surface to-white">
+      <section className="pt-32 pb-20 bg-gradient-to-b from-surface to-white dark:from-primary dark:to-primary-800">
         <Container>
           <SectionHeader
             subtitle="Contact Us"
@@ -40,16 +40,16 @@ export default function ContactPage() {
             </div>
 
             <div className="space-y-8">
-              <div className="rounded-2xl border border-border bg-white p-8">
-                <h3 className="font-heading text-lg font-semibold text-primary-text mb-6">
+              <div className="rounded-2xl border border-border dark:border-white/10 bg-white dark:bg-primary-900 p-8">
+                <h3 className="font-heading text-lg font-semibold text-primary-text dark:text-white mb-6">
                   Contact Information
                 </h3>
                 <div className="space-y-5">
                   <div className="flex items-start gap-3">
                     <Mail className="h-5 w-5 text-primary-blue mt-0.5" />
                     <div>
-                      <p className="text-sm font-medium text-primary-text">Email</p>
-                      <a href={`mailto:${COMPANY.email}`} className="text-sm text-secondary-text hover:text-primary-blue transition-colors">
+                      <p className="text-sm font-medium text-primary-text dark:text-white">Email</p>
+                      <a href={`mailto:${COMPANY.email}`} className="text-sm text-secondary-text dark:text-white/60 hover:text-primary-blue dark:hover:text-primary-blue transition-colors">
                         {COMPANY.email}
                       </a>
                     </div>
@@ -57,8 +57,8 @@ export default function ContactPage() {
                   <div className="flex items-start gap-3">
                     <Phone className="h-5 w-5 text-primary-blue mt-0.5" />
                     <div>
-                      <p className="text-sm font-medium text-primary-text">Phone</p>
-                      <a href={`tel:${COMPANY.phone}`} className="text-sm text-secondary-text hover:text-primary-blue transition-colors">
+                      <p className="text-sm font-medium text-primary-text dark:text-white">Phone</p>
+                      <a href={`tel:${COMPANY.phone}`} className="text-sm text-secondary-text dark:text-white/60 hover:text-primary-blue dark:hover:text-primary-blue transition-colors">
                         {COMPANY.phone}
                       </a>
                     </div>
@@ -66,28 +66,28 @@ export default function ContactPage() {
                   <div className="flex items-start gap-3">
                     <MapPin className="h-5 w-5 text-primary-blue mt-0.5" />
                     <div>
-                      <p className="text-sm font-medium text-primary-text">Location</p>
-                      <p className="text-sm text-secondary-text">{COMPANY.address}</p>
+                      <p className="text-sm font-medium text-primary-text dark:text-white">Location</p>
+                      <p className="text-sm text-secondary-text dark:text-white/60">{COMPANY.address}</p>
                     </div>
                   </div>
                   <div className="flex items-start gap-3">
                     <Clock className="h-5 w-5 text-primary-blue mt-0.5" />
                     <div>
-                      <p className="text-sm font-medium text-primary-text">Hours</p>
-                      <p className="text-sm text-secondary-text">Mon-Fri: 8:00 AM - 6:00 PM EAT</p>
+                      <p className="text-sm font-medium text-primary-text dark:text-white">Hours</p>
+                      <p className="text-sm text-secondary-text dark:text-white/60">Mon-Fri: 8:00 AM - 6:00 PM EAT</p>
                     </div>
                   </div>
                 </div>
               </div>
 
-              <div className="rounded-2xl border border-border bg-white p-8">
-                <h3 className="font-heading text-lg font-semibold text-primary-text mb-4">
+              <div className="rounded-2xl border border-border dark:border-white/10 bg-white dark:bg-primary-900 p-8">
+                <h3 className="font-heading text-lg font-semibold text-primary-text dark:text-white mb-4">
                   Office
                 </h3>
                 <div className="space-y-4">
                   <div>
-                    <p className="text-sm font-medium text-primary-text">Nairobi, Kenya</p>
-                    <p className="text-xs text-secondary-text">Headquarters</p>
+                    <p className="text-sm font-medium text-primary-text dark:text-white">Nairobi, Kenya</p>
+                    <p className="text-xs text-secondary-text dark:text-white/60">Headquarters</p>
                   </div>
                 </div>
               </div>

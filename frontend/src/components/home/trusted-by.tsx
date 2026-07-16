@@ -19,9 +19,7 @@ export function TrustedBy() {
                 key={`${partner.name}-${index}`}
                 className="flex-shrink-0 flex items-center justify-center h-12 px-6"
               >
-                <span className="font-heading text-lg font-bold text-primary/30 hover:text-primary/50 transition-colors whitespace-nowrap">
-                  {partner.name}
-                </span>
+                <img src={partner.logo} alt={partner.name} className="h-10 object-contain" />
               </div>
             ))}
           </div>

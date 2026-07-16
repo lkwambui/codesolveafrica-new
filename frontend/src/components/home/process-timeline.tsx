@@ -7,7 +7,7 @@ import { processSteps } from "@/data/process";
 
 export function ProcessTimeline() {
   return (
-    <section className="py-20 bg-surface dark:bg-primary-800/50">
+    <section className="py-20 dark:bg-primary">
       <Container>
         <SectionHeader
           subtitle="Our Process"

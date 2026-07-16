@@ -18,6 +18,8 @@ const buttonVariants = cva(
           "text-secondary-text hover:text-primary-text hover:bg-surface active:scale-[0.97]",
         accent:
           "bg-accent text-white hover:bg-accent/90 shadow-sm hover:shadow-md active:scale-[0.97]",
+        "accent-warm":
+          "bg-accent-warm text-white hover:bg-accent-warm/90 shadow-sm hover:shadow-md active:scale-[0.97]",
         danger:
           "bg-danger text-white hover:bg-danger/90 shadow-sm hover:shadow-md active:scale-[0.97]",
         link: "text-primary-blue underline-offset-4 hover:underline",

@@ -19,7 +19,7 @@ export function TestimonialCard({
   rating,
 }: TestimonialCardProps) {
   return (
-    <div className="flex flex-col rounded-2xl border border-border bg-white p-8 h-full">
+    <div className="flex flex-col rounded-2xl border border-border bg-white p-8 h-full dark:border-white/10 dark:bg-primary-800">
       <div className="flex items-center gap-0.5 mb-4">
         {Array.from({ length: 5 }).map((_, i) => (
           <Star
@@ -30,7 +30,7 @@ export function TestimonialCard({
           />
         ))}
       </div>
-      <blockquote className="flex-1 text-sm text-secondary-text leading-relaxed">
+      <blockquote className="flex-1 text-sm text-secondary-text leading-relaxed dark:text-white/60">
         &ldquo;{content}&rdquo;
       </blockquote>
       <div className="mt-6 flex items-center gap-3">
@@ -38,8 +38,8 @@ export function TestimonialCard({
           {name.split(" ").map((n) => n[0]).join("")}
         </div>
         <div>
-          <p className="text-sm font-semibold text-primary-text">{name}</p>
-          <p className="text-xs text-secondary-text">
+          <p className="text-sm font-semibold text-primary-text dark:text-white">{name}</p>
+          <p className="text-xs text-secondary-text dark:text-white/60">
             {role}, {company}
           </p>
         </div>

@@ -1,7 +1,8 @@
-const API_BASE_URL = process.env.NEXT_PUBLIC_API_URL || "https://api.codesolveafrica.com";
+const API_BASE_URL = process.env.NEXT_PUBLIC_API_URL;
 
 interface FetchOptions extends RequestInit {
   params?: Record<string, string>;
+  timeout?: number;
 }
 
 class ApiError extends Error {
@@ -15,7 +16,11 @@ class ApiError extends Error {
 }
 
 async function request<T>(endpoint: string, options: FetchOptions = {}): Promise<T> {
-  const { params, ...fetchOptions } = options;
+  const { params, timeout = 30000, ...fetchOptions } = options;
+
+  if (!API_BASE_URL) {
+    throw new ApiError(0, "API base URL is not configured. Set NEXT_PUBLIC_API_URL environment variable.");
+  }
 
   let url = `${API_BASE_URL}${endpoint}`;
 
@@ -24,22 +29,40 @@ async function request<T>(endpoint: string, options: FetchOptions = {}): Promise
     url += `?${searchParams.toString()}`;
   }
 
-  const response = await fetch(url, {
-    headers: {
-      "Content-Type": "application/json",
-      ...fetchOptions.headers,
-    },
-    ...fetchOptions,
-  });
+  const controller = new AbortController();
+  const timeoutId = setTimeout(() => controller.abort(), timeout);
 
-  if (!response.ok) {
-    throw new ApiError(
-      response.status,
-      `API request failed: ${response.statusText}`
-    );
+  const headers: Record<string, string> = {
+    "Content-Type": "application/json",
+    ...(fetchOptions.headers as Record<string, string>),
+  };
+
+  try {
+    const response = await fetch(url, {
+      ...fetchOptions,
+      headers,
+      signal: controller.signal,
+      credentials: "include",
+    });
+
+    if (!response.ok) {
+      const errorBody = await response.text().catch(() => "");
+      throw new ApiError(
+        response.status,
+        errorBody || `API request failed: ${response.statusText}`
+      );
+    }
+
+    return response.json();
+  } catch (error) {
+    if (error instanceof ApiError) throw error;
+    if ((error as Error).name === "AbortError") {
+      throw new ApiError(408, "Request timed out");
+    }
+    throw new ApiError(0, `Network error: ${(error as Error).message}`);
+  } finally {
+    clearTimeout(timeoutId);
   }
-
-  return response.json();
 }
 
 export const api = {

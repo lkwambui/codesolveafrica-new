@@ -20,8 +20,8 @@ const config: Config = {
     },
     extend: {
       fontFamily: {
-        heading: ["var(--font-plus-jakarta)", "system-ui", "sans-serif"],
-        body: ["var(--font-inter)", "system-ui", "sans-serif"],
+        heading: ["Inter", "system-ui", "sans-serif"],
+        body: ["system-ui", "sans-serif"],
       },
       colors: {
         primary: {
@@ -75,6 +75,19 @@ const config: Config = {
           700: "#0e7490",
           800: "#155e75",
           900: "#164e63",
+        },
+        "accent-warm": {
+          DEFAULT: "#F97316",
+          50: "#fff7ed",
+          100: "#ffedd5",
+          200: "#fed7aa",
+          300: "#fdba74",
+          400: "#fb923c",
+          500: "#F97316",
+          600: "#ea580c",
+          700: "#c2410c",
+          800: "#9a3412",
+          900: "#7c2d12",
         },
         surface: "#F8FAFC",
         border: "#E2E8F0",

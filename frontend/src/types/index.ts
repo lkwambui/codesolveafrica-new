@@ -29,7 +29,7 @@ export interface Course {
   price: number;
   currency: string;
   curriculum: { module: number; title: string; topics: string[] }[];
-  instructor: { name: string; role: string; bio: string };
+  instructor: { name: string; role: string; bio: string; avatar: string };
   learningOutcomes: string[];
   prerequisites: string[];
 }

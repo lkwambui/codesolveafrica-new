@@ -32,7 +32,7 @@ export default async function CareerDetailPage({ params }: { params: Promise<{ s
 
   return (
     <>
-      <section className="pt-28 pb-20 bg-gradient-to-b from-surface to-white">
+      <section className="pt-28 pb-20 bg-gradient-to-b from-surface to-white dark:from-primary dark:to-primary-800">
         <Container>
           <Breadcrumb
             items={[
@@ -49,11 +49,11 @@ export default async function CareerDetailPage({ params }: { params: Promise<{ s
                 <Badge variant="outline">{career.department}</Badge>
               </div>
 
-              <h1 className="font-heading text-3xl md:text-4xl font-bold text-primary-text leading-tight">
+              <h1 className="font-heading text-3xl md:text-4xl font-bold text-primary-text dark:text-white leading-tight">
                 {career.title}
               </h1>
 
-              <div className="mt-4 flex flex-wrap items-center gap-4 text-sm text-secondary-text">
+              <div className="mt-4 flex flex-wrap items-center gap-4 text-sm text-secondary-text dark:text-white/60">
                 <span className="flex items-center gap-1.5">
                   <MapPin className="h-4 w-4" /> {career.location}
                 </span>
@@ -65,15 +65,15 @@ export default async function CareerDetailPage({ params }: { params: Promise<{ s
                 </span>
               </div>
 
-              <p className="mt-6 text-lg text-secondary-text leading-relaxed">
+              <p className="mt-6 text-lg text-secondary-text dark:text-white/60 leading-relaxed">
                 {career.description}
               </p>
 
               <div className="mt-10">
-                <h2 className="font-heading text-xl font-semibold text-primary-text mb-4">Responsibilities</h2>
+                <h2 className="font-heading text-xl font-semibold text-primary-text dark:text-white mb-4">Responsibilities</h2>
                 <ul className="space-y-3">
                   {career.responsibilities.map((item) => (
-                    <li key={item} className="flex items-start gap-2 text-sm text-secondary-text">
+                    <li key={item} className="flex items-start gap-2 text-sm text-secondary-text dark:text-white/60">
                       <CheckCircle2 className="h-4 w-4 text-primary-blue mt-0.5 flex-shrink-0" />
                       {item}
                     </li>
@@ -82,10 +82,10 @@ export default async function CareerDetailPage({ params }: { params: Promise<{ s
               </div>
 
               <div className="mt-10">
-                <h2 className="font-heading text-xl font-semibold text-primary-text mb-4">Requirements</h2>
+                <h2 className="font-heading text-xl font-semibold text-primary-text dark:text-white mb-4">Requirements</h2>
                 <ul className="space-y-3">
                   {career.requirements.map((item) => (
-                    <li key={item} className="flex items-start gap-2 text-sm text-secondary-text">
+                    <li key={item} className="flex items-start gap-2 text-sm text-secondary-text dark:text-white/60">
                       <CheckCircle2 className="h-4 w-4 text-success mt-0.5 flex-shrink-0" />
                       {item}
                     </li>
@@ -94,10 +94,10 @@ export default async function CareerDetailPage({ params }: { params: Promise<{ s
               </div>
 
               <div className="mt-10">
-                <h2 className="font-heading text-xl font-semibold text-primary-text mb-4">Benefits</h2>
+                <h2 className="font-heading text-xl font-semibold text-primary-text dark:text-white mb-4">Benefits</h2>
                 <ul className="space-y-3">
                   {career.benefits.map((item) => (
-                    <li key={item} className="flex items-start gap-2 text-sm text-secondary-text">
+                    <li key={item} className="flex items-start gap-2 text-sm text-secondary-text dark:text-white/60">
                       <CheckCircle2 className="h-4 w-4 text-accent mt-0.5 flex-shrink-0" />
                       {item}
                     </li>
@@ -107,11 +107,11 @@ export default async function CareerDetailPage({ params }: { params: Promise<{ s
             </div>
 
             <div className="space-y-6">
-              <div className="rounded-2xl border border-border bg-white p-6 sticky top-24">
-                <h3 className="font-heading text-lg font-semibold text-primary-text mb-4">
+              <div className="rounded-2xl border border-border dark:border-white/10 bg-white dark:bg-primary-900 p-6 sticky top-24">
+                <h3 className="font-heading text-lg font-semibold text-primary-text dark:text-white mb-4">
                   Apply for this Position
                 </h3>
-                <p className="text-sm text-secondary-text mb-6">
+                <p className="text-sm text-secondary-text dark:text-white/60 mb-6">
                   Ready to join our team? Submit your application and we&apos;ll get back to you within 5-7 business days.
                 </p>
                 <div className="space-y-3">
@@ -133,7 +133,7 @@ export default async function CareerDetailPage({ params }: { params: Promise<{ s
           <Separator className="my-16" />
 
           <div id="apply">
-            <h2 className="font-heading text-2xl font-bold text-primary-text mb-8 text-center">
+            <h2 className="font-heading text-2xl font-bold text-primary-text dark:text-white mb-8 text-center">
               Apply for {career.title}
             </h2>
             <div className="max-w-2xl mx-auto">

@@ -11,7 +11,7 @@ export function CTASection() {
       primaryHref="/contact"
       secondaryLabel="Book a Consultation"
       secondaryHref="/contact"
-      variant="primary"
+      variant="accent-warm"
     />
   );
 }

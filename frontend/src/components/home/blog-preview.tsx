@@ -29,6 +29,8 @@ export function BlogPreview() {
               publishedAt={post.publishedAt}
               readingTime={post.readingTime}
               slug={post.slug}
+              authorName={post.author.name}
+              authorAvatar={post.author.avatar}
               index={index}
             />
           ))}

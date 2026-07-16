@@ -33,7 +33,7 @@ export function ServiceCard({ title, description, icon, slug, index = 0 }: Servi
       <Link href={`/services/${slug}`} className="group block h-full">
         <Card className="h-full p-6 group-hover:border-primary-blue/30 transition-all dark:bg-primary-800 dark:border-white/10">
           <CardContent className="p-0">
-            <div className="mb-4 flex h-12 w-12 items-center justify-center rounded-xl bg-primary-blue/10 text-primary-blue group-hover:bg-primary-blue group-hover:text-white transition-all duration-300">
+            <div className="mb-4 flex h-12 w-12 items-center justify-center rounded-xl bg-primary-blue/10 text-primary-blue group-hover:bg-primary-blue group-hover:text-white transition-all duration-300 dark:bg-primary-blue/20">
               <Icon className="h-6 w-6" />
             </div>
             <h3 className="font-heading text-lg font-semibold text-primary-text group-hover:text-primary-blue transition-colors dark:text-white">

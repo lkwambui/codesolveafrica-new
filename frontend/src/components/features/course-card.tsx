@@ -2,11 +2,24 @@
 
 import * as React from "react";
 import Link from "next/link";
+import Image from "next/image";
 import { motion } from "framer-motion";
 import { Clock, Signal, ArrowRight } from "lucide-react";
 import { Badge } from "@/components/ui/badge";
 import { Card, CardContent } from "@/components/ui/card";
-import { cn } from "@/lib/utils";
+
+const thumbnailImages: Record<string, string> = {
+  "full-stack-web-development": "/courses/dev.jpg",
+  "ai-machine-learning": "/courses/data-science.jpg",
+  "cloud-devops-engineering": "/courses/cloud.jpg",
+  "mobile-app-development": "/courses/dev.jpg",
+  "data-science-analytics": "/courses/data-science.jpg",
+  "cybersecurity-fundamentals": "/courses/cloud.jpg",
+};
+
+function getThumbnail(slug: string) {
+  return thumbnailImages[slug] || "/courses/dev.jpg";
+}
 
 interface CourseCardProps {
   title: string;
@@ -43,34 +56,45 @@ export function CourseCard({
       transition={{ duration: 0.5, delay: index * 0.1 }}
     >
       <Link href={`/academy/courses/${slug}`} className="group block h-full">
-        <Card className="h-full group-hover:border-primary-blue/30 transition-all dark:bg-primary-800 dark:border-white/10">
-          <CardContent className="p-6">
-            <div className="flex items-center justify-between mb-3">
+        <Card className="h-full overflow-hidden group-hover:border-primary-blue/30 transition-all dark:bg-primary-800 dark:border-white/10">
+          <div className="relative h-40 overflow-hidden">
+            <Image
+              src={getThumbnail(slug)}
+              alt={title}
+              fill
+              sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+              className="object-cover transition-transform duration-500 group-hover:scale-110"
+            />
+            <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-transparent" />
+            <div className="absolute top-3 left-3">
               <Badge variant={levelColors[level] || "primary"}>{level}</Badge>
-              <span className="font-heading text-xl font-bold text-primary-text">
+            </div>
+            <div className="absolute bottom-3 right-3">
+              <span className="font-heading text-lg font-bold text-white drop-shadow-sm">
                 KSh {price.toLocaleString()}
               </span>
             </div>
+          </div>
+          <CardContent className="p-5">
             <h3 className="font-heading text-lg font-semibold text-primary-text group-hover:text-primary-blue transition-colors dark:text-white">
               {title}
             </h3>
             <p className="mt-2 text-sm text-secondary-text line-clamp-2 leading-relaxed dark:text-white/60">
               {shortDescription}
             </p>
-            <div className="mt-4 flex items-center gap-4 text-xs text-secondary-text">
-              <span className="flex items-center gap-1">
-                <Clock className="h-3.5 w-3.5" /> {duration}
-              </span>
-              <span className="flex items-center gap-1">
-                <Signal className="h-3.5 w-3.5" /> {level}
+            <div className="mt-4 flex items-center justify-between">
+              <div className="flex items-center gap-4 text-xs text-secondary-text dark:text-white/60">
+                <span className="flex items-center gap-1">
+                  <Clock className="h-3.5 w-3.5" /> {duration}
+                </span>
+                <span className="flex items-center gap-1">
+                  <Signal className="h-3.5 w-3.5" /> {level}
+                </span>
+              </div>
+              <span className="inline-flex items-center text-sm font-medium text-primary-blue gap-1 group-hover:gap-2 transition-all">
+                View <ArrowRight className="h-4 w-4" />
               </span>
             </div>
-            <span className={cn(
-              "mt-4 inline-flex items-center text-sm font-medium text-primary-blue gap-1",
-              "group-hover:gap-2 transition-all"
-            )}>
-              View Course <ArrowRight className="h-4 w-4" />
-            </span>
           </CardContent>
         </Card>
       </Link>

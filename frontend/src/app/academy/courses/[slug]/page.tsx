@@ -1,6 +1,7 @@
 import { notFound } from "next/navigation";
 import type { Metadata } from "next";
 import Link from "next/link";
+import Image from "next/image";
 import { Clock, Signal, DollarSign, CheckCircle2, ArrowRight, Users } from "lucide-react";
 import { Container } from "@/components/ui/container";
 import { Badge } from "@/components/ui/badge";
@@ -36,7 +37,7 @@ export default async function CourseDetailPage({ params }: { params: Promise<{ s
 
   return (
     <>
-      <section className="pt-28 pb-20 bg-gradient-to-b from-surface to-white">
+      <section className="pt-28 pb-20 bg-gradient-to-b from-surface to-white dark:from-primary dark:to-primary-800">
         <Container>
           <Breadcrumb
             items={[
@@ -53,24 +54,24 @@ export default async function CourseDetailPage({ params }: { params: Promise<{ s
                 <Badge variant="outline">{course.duration}</Badge>
               </div>
 
-              <h1 className="font-heading text-3xl md:text-4xl font-bold text-primary-text leading-tight">
+              <h1 className="font-heading text-3xl md:text-4xl font-bold text-primary-text dark:text-white leading-tight">
                 {course.title}
               </h1>
-              <p className="mt-4 text-lg text-secondary-text leading-relaxed">
+              <p className="mt-4 text-lg text-secondary-text dark:text-white/60 leading-relaxed">
                 {course.description}
               </p>
 
-              <div className="mt-8 flex flex-wrap gap-6 text-sm text-secondary-text">
+              <div className="mt-8 flex flex-wrap gap-6 text-sm text-secondary-text dark:text-white/60">
                 <span className="flex items-center gap-2"><Clock className="h-4 w-4" /> {course.duration}</span>
                 <span className="flex items-center gap-2"><Signal className="h-4 w-4" /> {course.level}</span>
                 <span className="flex items-center gap-2"><Users className="h-4 w-4" /> Max 20 students</span>
               </div>
 
               <div className="mt-10">
-                <h2 className="font-heading text-xl font-semibold text-primary-text mb-4">Learning Outcomes</h2>
+                <h2 className="font-heading text-xl font-semibold text-primary-text dark:text-white mb-4">Learning Outcomes</h2>
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
                   {course.learningOutcomes.map((outcome) => (
-                    <div key={outcome} className="flex items-start gap-2 text-sm text-secondary-text">
+                    <div key={outcome} className="flex items-start gap-2 text-sm text-secondary-text dark:text-white/60">
                       <CheckCircle2 className="h-4 w-4 text-success mt-0.5 flex-shrink-0" />
                       {outcome}
                     </div>
@@ -79,16 +80,16 @@ export default async function CourseDetailPage({ params }: { params: Promise<{ s
               </div>
 
               <div className="mt-10">
-                <h2 className="font-heading text-xl font-semibold text-primary-text mb-6">Curriculum</h2>
+                <h2 className="font-heading text-xl font-semibold text-primary-text dark:text-white mb-6">Curriculum</h2>
                 <div className="space-y-4">
                   {course.curriculum.map((module) => (
-                    <div key={module.module} className="rounded-xl border border-border bg-white p-5">
-                      <h3 className="font-heading font-semibold text-primary-text">
+                    <div key={module.module} className="rounded-xl border border-border dark:border-white/10 bg-white dark:bg-primary-900 p-5">
+                      <h3 className="font-heading font-semibold text-primary-text dark:text-white">
                         Module {module.module}: {module.title}
                       </h3>
                       <ul className="mt-3 space-y-1.5">
                         {module.topics.map((topic) => (
-                          <li key={topic} className="text-sm text-secondary-text flex items-center gap-2">
+                          <li key={topic} className="text-sm text-secondary-text dark:text-white/60 flex items-center gap-2">
                             <div className="h-1.5 w-1.5 rounded-full bg-primary-blue" />
                             {topic}
                           </li>
@@ -100,10 +101,10 @@ export default async function CourseDetailPage({ params }: { params: Promise<{ s
               </div>
 
               <div className="mt-10">
-                <h2 className="font-heading text-xl font-semibold text-primary-text mb-4">Prerequisites</h2>
+                <h2 className="font-heading text-xl font-semibold text-primary-text dark:text-white mb-4">Prerequisites</h2>
                 <ul className="space-y-2">
                   {course.prerequisites.map((req) => (
-                    <li key={req} className="text-sm text-secondary-text flex items-center gap-2">
+                    <li key={req} className="text-sm text-secondary-text dark:text-white/60 flex items-center gap-2">
                       <div className="h-1.5 w-1.5 rounded-full bg-accent" />
                       {req}
                     </li>
@@ -111,26 +112,26 @@ export default async function CourseDetailPage({ params }: { params: Promise<{ s
                 </ul>
               </div>
 
-              <div className="mt-10 rounded-xl border border-border bg-white p-6">
-                <h2 className="font-heading text-xl font-semibold text-primary-text mb-4">Instructor</h2>
+              <div className="mt-10 rounded-xl border border-border dark:border-white/10 bg-white dark:bg-primary-900 p-6">
+                <h2 className="font-heading text-xl font-semibold text-primary-text dark:text-white mb-4">Instructor</h2>
                 <div className="flex items-start gap-4">
-                  <div className="h-16 w-16 rounded-full bg-gradient-to-br from-primary-blue to-accent flex items-center justify-center text-white font-heading font-bold text-xl flex-shrink-0">
-                    {course.instructor.name.split(" ").map((n) => n[0]).join("")}
+                  <div className="h-16 w-16 rounded-full overflow-hidden flex-shrink-0 relative">
+                    <Image src={course.instructor.avatar} alt={course.instructor.name} fill className="object-cover" />
                   </div>
                   <div>
-                    <p className="font-heading text-lg font-semibold text-primary-text">{course.instructor.name}</p>
+                    <p className="font-heading text-lg font-semibold text-primary-text dark:text-white">{course.instructor.name}</p>
                     <p className="text-sm text-primary-blue">{course.instructor.role}</p>
-                    <p className="text-sm text-secondary-text mt-1">{course.instructor.bio}</p>
+                    <p className="text-sm text-secondary-text dark:text-white/60 mt-1">{course.instructor.bio}</p>
                   </div>
                 </div>
               </div>
             </div>
 
             <div className="space-y-6">
-              <div className="rounded-2xl border border-border bg-white p-6 sticky top-24">
+              <div className="rounded-2xl border border-border dark:border-white/10 bg-white dark:bg-primary-900 p-6 sticky top-24">
                 <div className="text-center mb-6">
-                  <p className="text-sm text-secondary-text">Course Price</p>
-                  <p className="font-heading text-4xl font-bold text-primary-text">
+                  <p className="text-sm text-secondary-text dark:text-white/60">Course Price</p>
+                  <p className="font-heading text-4xl font-bold text-primary-text dark:text-white">
                     KSh {course.price.toLocaleString()}
                   </p>
                 </div>
@@ -142,7 +143,7 @@ export default async function CourseDetailPage({ params }: { params: Promise<{ s
                 <Button asChild variant="outline" className="w-full" size="lg">
                   <Link href="/contact">Request Syllabus</Link>
                 </Button>
-                <div className="mt-6 pt-6 border-t border-border space-y-3 text-sm text-secondary-text">
+                <div className="mt-6 pt-6 border-t border-border dark:border-white/10 space-y-3 text-sm text-secondary-text dark:text-white/60">
                   <div className="flex items-center gap-2">
                     <CheckCircle2 className="h-4 w-4 text-success" /> Certificate of completion
                   </div>

@@ -11,7 +11,7 @@ interface CTABannerProps {
   primaryHref: string;
   secondaryLabel?: string;
   secondaryHref?: string;
-  variant?: "primary" | "accent";
+  variant?: "primary" | "accent" | "accent-warm";
   className?: string;
 }
 
@@ -28,6 +28,8 @@ export function CTABanner({
   const bgClass =
     variant === "accent"
       ? "bg-accent"
+      : variant === "accent-warm"
+      ? "bg-accent-warm"
       : "bg-primary-blue";
 
   return (

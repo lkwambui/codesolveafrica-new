@@ -15,14 +15,14 @@ export const metadata: Metadata = {
 export default function AboutPage() {
   return (
     <>
-      <section className="pt-32 pb-20 bg-gradient-to-b from-surface to-white">
+      <section className="pt-32 pb-20 bg-gradient-to-b from-surface to-white dark:from-primary dark:to-primary-800">
         <Container>
           <SectionHeader
             subtitle="About Us"
             title="Enterprise Technology, African Innovation"
             description={`${COMPANY.description} We're on a mission to build world-class technology solutions that drive economic growth across the continent.`}
           />
-          <div className="max-w-3xl mx-auto mt-12 space-y-6 text-secondary-text leading-relaxed">
+          <div className="max-w-3xl mx-auto mt-12 space-y-6 text-secondary-text dark:text-white/60 leading-relaxed">
             <p>
               CodeSolveAfrica is a Nairobi-based software engineering company founded by a team of
               passionate technologists who believe in the power of African innovation. We partner with
@@ -43,7 +43,7 @@ export default function AboutPage() {
 
       <StatsSection />
 
-      <section className="py-20 bg-surface">
+      <section className="py-20 bg-surface dark:bg-primary-800/50">
         <Container>
           <SectionHeader
             subtitle="Leadership"
@@ -58,7 +58,7 @@ export default function AboutPage() {
         </Container>
       </section>
 
-      <section className="py-20">
+      <section className="py-20 dark:bg-primary">
         <Container>
           <SectionHeader
             subtitle="Our Values"
@@ -93,8 +93,8 @@ export default function AboutPage() {
               },
             ].map((value) => (
               <div key={value.title} className="text-center p-6">
-                <h3 className="font-heading text-lg font-semibold text-primary-text">{value.title}</h3>
-                <p className="mt-2 text-sm text-secondary-text">{value.description}</p>
+                <h3 className="font-heading text-lg font-semibold text-primary-text dark:text-white">{value.title}</h3>
+                <p className="mt-2 text-sm text-secondary-text dark:text-white/60">{value.description}</p>
               </div>
             ))}
           </div>

@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import Image from "next/image";
 import { motion, AnimatePresence } from "framer-motion";
 import { ChevronLeft, ChevronRight, Star } from "lucide-react";
 import { Container } from "@/components/ui/container";
@@ -48,8 +49,8 @@ export function TestimonialsSection() {
                   &ldquo;{testimonial.content}&rdquo;
                 </blockquote>
                 <div className="mt-8 flex items-center gap-4">
-                  <div className="h-14 w-14 rounded-full bg-gradient-to-br from-primary-blue to-accent flex items-center justify-center text-white font-semibold text-lg">
-                    {testimonial.name.split(" ").map((n) => n[0]).join("")}
+                  <div className="h-14 w-14 rounded-full overflow-hidden relative">
+                    <Image src={testimonial.avatar} alt={testimonial.name} fill className="object-cover" />
                   </div>
                   <div>
                     <p className="font-heading text-base font-semibold text-primary-text dark:text-white">

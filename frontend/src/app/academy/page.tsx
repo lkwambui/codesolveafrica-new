@@ -14,7 +14,7 @@ export const metadata: Metadata = {
 export default function AcademyPage() {
   return (
     <>
-      <section className="pt-32 pb-20 bg-gradient-to-b from-surface to-white">
+      <section className="pt-32 pb-20 bg-gradient-to-b from-surface to-white dark:from-primary dark:to-primary-800">
         <Container>
           <SectionHeader
             subtitle="CodeSolveAfrica Academy"

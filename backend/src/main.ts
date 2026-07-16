@@ -20,8 +20,30 @@ async function bootstrap(): Promise<void> {
 
   app.setGlobalPrefix(apiPrefix);
 
-  app.use(helmet());
-  app.use(cookieParser());
+  app.use(
+    helmet({
+      contentSecurityPolicy: {
+        directives: {
+          defaultSrc: ["'self'"],
+          scriptSrc: ["'self'", "'unsafe-inline'", "'unsafe-eval'"],
+          styleSrc: ["'self'", "'unsafe-inline'"],
+          imgSrc: ["'self'", "data:", "blob:", "images.unsplash.com", "res.cloudinary.com"],
+          connectSrc: ["'self'", frontendUrl],
+          fontSrc: ["'self'", "data:"],
+          objectSrc: ["'none'"],
+          frameAncestors: ["'none'"],
+        },
+      },
+      hsts: {
+        maxAge: 63072000,
+        includeSubDomains: true,
+        preload: true,
+      },
+      frameguard: { action: 'deny' },
+      referrerPolicy: { policy: 'strict-origin-when-cross-origin' },
+    }),
+  );
+  app.use(cookieParser(process.env.COOKIE_SECRET || process.env.JWT_SECRET));
 
   app.enableCors({
     origin: [frontendUrl, 'http://localhost:3000', 'http://localhost:3001'],
@@ -77,14 +99,17 @@ async function bootstrap(): Promise<void> {
     .addTag('Pages', 'Page management')
     .build();
 
-  const document = SwaggerModule.createDocument(app, swaggerConfig);
-  SwaggerModule.setup(`${apiPrefix}/docs`, app, document, {
-    swaggerOptions: {
-      persistAuthorization: true,
-      tagsSorter: 'alpha',
-      operationsSorter: 'alpha',
-    },
-  });
+  if (nodeEnv !== 'production') {
+    const document = SwaggerModule.createDocument(app, swaggerConfig);
+    SwaggerModule.setup(`${apiPrefix}/docs`, app, document, {
+      swaggerOptions: {
+        persistAuthorization: true,
+        tagsSorter: 'alpha',
+        operationsSorter: 'alpha',
+      },
+    });
+    logger.log(`Swagger docs at http://localhost:${port}/${apiPrefix}/docs`);
+  }
 
   await app.listen(port);
 

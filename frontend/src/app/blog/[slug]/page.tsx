@@ -1,6 +1,7 @@
 import { notFound } from "next/navigation";
 import type { Metadata } from "next";
 import Link from "next/link";
+import Image from "next/image";
 import { Calendar, Clock, ArrowLeft, ArrowRight, Tag } from "lucide-react";
 import { Container } from "@/components/ui/container";
 import { Badge } from "@/components/ui/badge";
@@ -36,7 +37,7 @@ export default async function BlogPostPage({ params }: { params: Promise<{ slug:
 
   return (
     <>
-      <article className="pt-28 pb-20">
+      <article className="pt-28 pb-20 dark:bg-primary">
         <Container>
           <Breadcrumb
             items={[
@@ -51,11 +52,11 @@ export default async function BlogPostPage({ params }: { params: Promise<{ slug:
               <Badge variant="primary">{post.category}</Badge>
             </div>
 
-            <h1 className="font-heading text-3xl md:text-4xl lg:text-5xl font-bold text-primary-text leading-tight">
+            <h1 className="font-heading text-3xl md:text-4xl lg:text-5xl font-bold text-primary-text dark:text-white leading-tight">
               {post.title}
             </h1>
 
-            <div className="mt-6 flex flex-wrap items-center gap-4 text-sm text-secondary-text">
+            <div className="mt-6 flex flex-wrap items-center gap-4 text-sm text-secondary-text dark:text-white/60">
               <span className="flex items-center gap-1.5">
                 <Calendar className="h-4 w-4" /> {formatDate(post.publishedAt)}
               </span>
@@ -64,24 +65,24 @@ export default async function BlogPostPage({ params }: { params: Promise<{ slug:
               </span>
             </div>
 
-            <div className="mt-8 flex items-center gap-4 p-4 rounded-xl bg-surface">
-              <div className="h-12 w-12 rounded-full bg-gradient-to-br from-primary-blue to-accent flex items-center justify-center text-white font-bold">
-                {post.author.name.split(" ").map((n) => n[0]).join("")}
+            <div className="mt-8 flex items-center gap-4 p-4 rounded-xl bg-surface dark:bg-primary-800">
+              <div className="h-12 w-12 rounded-full overflow-hidden relative">
+                <Image src={post.author.avatar} alt={post.author.name} fill className="object-cover" />
               </div>
               <div>
-                <p className="font-semibold text-primary-text">{post.author.name}</p>
-                <p className="text-sm text-secondary-text">{post.author.role}</p>
+                <p className="font-semibold text-primary-text dark:text-white">{post.author.name}</p>
+                <p className="text-sm text-secondary-text dark:text-white/60">{post.author.role}</p>
               </div>
             </div>
 
             <div className="mt-8 prose prose-gray max-w-none">
-              <p className="text-lg text-secondary-text leading-relaxed">
+              <p className="text-lg text-secondary-text dark:text-white/60 leading-relaxed">
                 {post.excerpt}
               </p>
-              <div className="mt-8 h-64 rounded-2xl bg-gradient-to-br from-primary-blue/5 to-accent/5 border border-border flex items-center justify-center">
-                <p className="text-secondary-text">Featured Image Placeholder</p>
+              <div className="mt-8 h-64 rounded-2xl overflow-hidden bg-gradient-to-br from-primary-blue/5 to-accent-warm/5 border border-border dark:border-white/10 relative">
+                <Image src="/og-image.png" alt={post.title} fill className="object-cover" />
               </div>
-              <div className="mt-8 space-y-4 text-secondary-text leading-relaxed">
+              <div className="mt-8 space-y-4 text-secondary-text dark:text-white/60 leading-relaxed">
                 <p>
                   This is where the full blog post content would be displayed. In a production environment,
                   this content would come from a CMS or markdown file. The article would include rich formatting,
@@ -113,10 +114,10 @@ export default async function BlogPostPage({ params }: { params: Promise<{ slug:
               <div>
                 {prevPost && (
                   <>
-                    <span className="text-xs text-secondary-text">Previous Article</span>
+                    <span className="text-xs text-secondary-text dark:text-white/60">Previous Article</span>
                     <Link
                       href={`/blog/${prevPost.slug}`}
-                      className="flex items-center gap-2 text-sm font-medium text-primary-text hover:text-primary-blue transition-colors mt-1"
+                      className="flex items-center gap-2 text-sm font-medium text-primary-text dark:text-white hover:text-primary-blue dark:hover:text-primary-blue transition-colors mt-1"
                     >
                       <ArrowLeft className="h-4 w-4" /> {prevPost.title}
                     </Link>
@@ -126,10 +127,10 @@ export default async function BlogPostPage({ params }: { params: Promise<{ slug:
               <div className="text-right">
                 {nextPost && (
                   <>
-                    <span className="text-xs text-secondary-text">Next Article</span>
+                    <span className="text-xs text-secondary-text dark:text-white/60">Next Article</span>
                     <Link
                       href={`/blog/${nextPost.slug}`}
-                      className="flex items-center gap-2 text-sm font-medium text-primary-text hover:text-primary-blue transition-colors mt-1"
+                      className="flex items-center gap-2 text-sm font-medium text-primary-text dark:text-white hover:text-primary-blue dark:hover:text-primary-blue transition-colors mt-1"
                     >
                       {nextPost.title} <ArrowRight className="h-4 w-4" />
                     </Link>

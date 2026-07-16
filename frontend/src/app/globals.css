@@ -20,7 +20,7 @@
   }
 
   ::selection {
-    @apply bg-primary-blue/20 text-primary;
+    @apply bg-accent-warm/20 text-primary;
   }
 
   :focus-visible {
