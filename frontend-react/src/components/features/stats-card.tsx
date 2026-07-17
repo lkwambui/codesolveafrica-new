@@ -1,6 +1,5 @@
 import * as React from "react";
-import CountUpModule from "react-countup";
-const CountUp = CountUpModule.default;
+import { useCountUp } from "react-countup";
 import { useIntersectionObserver } from "@/hooks/use-intersection-observer";
 import { cn } from "@/lib/utils";
 
@@ -14,6 +13,23 @@ interface StatsCardProps {
 
 export function StatsCard({ value, suffix, label, description, dark }: StatsCardProps) {
   const { ref, isVisible } = useIntersectionObserver<HTMLDivElement>({ threshold: 0.5 });
+  const countUpRef = React.useRef<HTMLSpanElement>(null) as React.RefObject<HTMLElement>;
+  const hasStarted = React.useRef(false);
+
+  const { start } = useCountUp({
+    ref: countUpRef,
+    end: value,
+    duration: 2.5,
+    separator: ",",
+    startOnMount: false,
+  });
+
+  React.useEffect(() => {
+    if (isVisible && !hasStarted.current) {
+      hasStarted.current = true;
+      start();
+    }
+  }, [isVisible, start]);
 
   return (
     <div
@@ -26,11 +42,7 @@ export function StatsCard({ value, suffix, label, description, dark }: StatsCard
       )}
     >
       <div className="font-heading text-4xl md:text-5xl font-bold text-primary-blue dark:text-primary-blue">
-        {isVisible ? (
-          <CountUp end={value} duration={2.5} separator="," />
-        ) : (
-          "0"
-        )}
+        <span ref={countUpRef}>0</span>
         <span className="text-accent">{suffix}</span>
       </div>
       <h3 className={cn(

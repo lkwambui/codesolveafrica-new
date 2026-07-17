@@ -31,11 +31,11 @@ function HeroBackground() {
 
 export function HeroSection() {
   return (
-    <section className="relative min-h-[90vh] flex items-center overflow-hidden">
+    <section className="relative min-h-[600px] lg:min-h-[90vh] flex items-center overflow-hidden">
       <HeroBackground />
 
       <Container className="relative z-10 pt-20 md:pt-24">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-start">
           <div className="text-center lg:text-left">
             <motion.div
               initial={{ opacity: 0, y: 20 }}
@@ -97,7 +97,7 @@ export function HeroSection() {
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               transition={{ duration: 0.8, delay: 0.5 }}
-              className="mt-12 flex items-center gap-8 justify-center lg:justify-start"
+              className="mt-12 flex items-center gap-8 justify-center lg:justify-start flex-wrap"
             >
               {[
                 { value: "15+", label: "Projects" },
@@ -120,11 +120,11 @@ export function HeroSection() {
             transition={{ duration: 0.8, delay: 0.3 }}
             className="relative hidden lg:block"
           >
-            <div className="relative rounded-2xl overflow-hidden shadow-2xl">
+            <div className="relative rounded-2xl overflow-hidden shadow-2xl lg:h-[75vh] min-h-[400px] lg:max-h-[600px]">
               <img
                 src="/hero/hero-team.jpg"
                 alt="CodeSolveAfrica team collaborating"
-                className="w-full h-auto object-cover"
+                className="absolute inset-0 w-full h-full object-cover"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-primary/30 via-primary/5 to-transparent" />
               <div className="absolute inset-0 bg-gradient-to-r from-primary-blue/10 to-transparent" />
