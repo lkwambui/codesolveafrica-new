@@ -100,8 +100,8 @@ export function HeroSection() {
               className="mt-12 flex items-center gap-8 justify-center lg:justify-start flex-wrap"
             >
               {[
-                { value: "15+", label: "Projects" },
-                { value: "10+", label: "Clients" },
+                { value: "80+", label: "Projects" },
+                { value: "50+", label: "Clients" },
                 { value: "98%", label: "Satisfaction" },
               ].map((stat) => (
                 <div key={stat.label} className="text-center">
@@ -136,7 +136,7 @@ export function HeroSection() {
                   <CheckCircle className="h-5 w-5" />
                 </div>
                 <div>
-                  <p className="text-sm font-semibold text-primary-text dark:text-white">250+ Engineers</p>
+                  <p className="text-sm font-semibold text-primary-text dark:text-white">10+ Engineers</p>
                   <p className="text-xs text-secondary-text dark:text-white/60">Ready to build</p>
                 </div>
               </div>
@@ -160,7 +160,7 @@ export function HeroSection() {
                   <Briefcase className="h-4 w-4" />
                 </div>
                 <div>
-                  <p className="text-xs font-semibold text-primary-text dark:text-white">500+</p>
+                  <p className="text-xs font-semibold text-primary-text dark:text-white">80+</p>
                   <p className="text-[10px] text-secondary-text dark:text-white/60">Projects</p>
                 </div>
               </div>

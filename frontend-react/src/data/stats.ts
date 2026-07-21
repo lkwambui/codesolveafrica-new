@@ -2,13 +2,13 @@ import { Stat } from "@/types";
 
 export const stats: Stat[] = [
   {
-    value: 15,
+    value: 80,
     suffix: "+",
     label: "Projects Delivered",
     description: "Across various industries in Africa",
   },
   {
-    value: 10,
+    value: 25,
     suffix: "+",
     label: "Happy Clients",
     description: "From startups to growing enterprises",

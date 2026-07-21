@@ -9,7 +9,7 @@ export const courses: Course[] = [
     description: "A comprehensive program covering React, Next.js, Node.js, and databases. Build production-ready applications.",
     duration: "16 weeks",
     level: "Intermediate",
-    price: 2499,
+    price: 25000,
     currency: "KES",
     curriculum: [
       { module: 1, title: "Frontend Fundamentals", topics: ["HTML5 & CSS3", "JavaScript ES6+", "TypeScript", "Responsive Design"] },
@@ -29,7 +29,7 @@ export const courses: Course[] = [
     description: "From fundamentals to advanced deep learning, master the skills to build AI-powered solutions.",
     duration: "20 weeks",
     level: "Advanced",
-    price: 3499,
+    price: 45000,
     currency: "KES",
     curriculum: [
       { module: 1, title: "ML Fundamentals", topics: ["Linear Algebra Review", "Supervised Learning", "Unsupervised Learning", "Model Evaluation"] },
@@ -49,7 +49,7 @@ export const courses: Course[] = [
     description: "Learn to design, deploy, and manage cloud infrastructure at scale.",
     duration: "14 weeks",
     level: "Intermediate",
-    price: 2199,
+    price: 18000,
     currency: "KES",
     curriculum: [
       { module: 1, title: "Cloud Fundamentals", topics: ["AWS Core Services", "VPC & Networking", "IAM & Security", "Cost Management"] },
@@ -69,7 +69,7 @@ export const courses: Course[] = [
     description: "Create beautiful, performant mobile applications using React Native and Expo.",
     duration: "12 weeks",
     level: "Intermediate",
-    price: 1999,
+    price: 15000,
     currency: "KES",
     curriculum: [
       { module: 1, title: "React Native Basics", topics: ["Components & Styling", "Navigation", "State Management", "APIs"] },
@@ -89,7 +89,7 @@ export const courses: Course[] = [
     description: "Master data analysis, visualization, and statistical modeling with Python.",
     duration: "14 weeks",
     level: "Beginner",
-    price: 1799,
+    price: 12000,
     currency: "KES",
     curriculum: [
       { module: 1, title: "Python for Data Science", topics: ["NumPy", "Pandas", "Data Cleaning", "Exploratory Analysis"] },
@@ -109,7 +109,7 @@ export const courses: Course[] = [
     description: "Learn essential cybersecurity concepts, tools, and best practices.",
     duration: "12 weeks",
     level: "Beginner",
-    price: 1599,
+    price: 8000,
     currency: "KES",
     curriculum: [
       { module: 1, title: "Security Foundations", topics: ["Threat Landscape", "Cryptography", "Network Security", "OS Security"] },
@@ -129,7 +129,7 @@ export const courses: Course[] = [
     description: "Enterprise blockchain development with Ethereum and Solana.",
     duration: "12 weeks",
     level: "Advanced",
-    price: 2999,
+    price: 30000,
     currency: "KES",
     curriculum: [
       { module: 1, title: "Blockchain Fundamentals", topics: ["Distributed Ledgers", "Consensus Mechanisms", "Cryptographic Hash Functions", "Token Economics"] },
@@ -149,7 +149,7 @@ export const courses: Course[] = [
     description: "Master the art and science of user interface and user experience design.",
     duration: "10 weeks",
     level: "Beginner",
-    price: 1499,
+    price: 6000,
     currency: "KES",
     curriculum: [
       { module: 1, title: "Design Thinking", topics: ["User Research", "Personas", "Journey Mapping", "Problem Definition"] },
@@ -169,7 +169,7 @@ export const courses: Course[] = [
     description: "Learn Python programming from basics to advanced concepts with real-world projects.",
     duration: "10 weeks",
     level: "Beginner",
-    price: 999,
+    price: 5000,
     currency: "KES",
     curriculum: [
       { module: 1, title: "Python Basics", topics: ["Variables & Data Types", "Control Flow", "Functions", "Data Structures"] },
@@ -189,7 +189,7 @@ export const courses: Course[] = [
     description: "Master enterprise Java development with Spring Boot, microservices, and cloud-native patterns.",
     duration: "16 weeks",
     level: "Advanced",
-    price: 2799,
+    price: 25000,
     currency: "KES",
     curriculum: [
       { module: 1, title: "Advanced Java", topics: ["Concurrency", "Streams API", "Functional Programming", "JVM Internals"] },
@@ -209,7 +209,7 @@ export const courses: Course[] = [
     description: "Learn to build robust CI/CD pipelines and automate infrastructure.",
     duration: "10 weeks",
     level: "Intermediate",
-    price: 1899,
+    price: 10000,
     currency: "KES",
     curriculum: [
       { module: 1, title: "Version Control & Git", topics: ["Git Advanced", "Branching Strategies", "Git Hooks", "Monorepos"] },
@@ -229,7 +229,7 @@ export const courses: Course[] = [
     description: "Learn the skills to become an effective technical product manager.",
     duration: "8 weeks",
     level: "Intermediate",
-    price: 1299,
+    price: 8000,
     currency: "KES",
     curriculum: [
       { module: 1, title: "Product Strategy", topics: ["Market Research", "Competitive Analysis", "Roadmapping", "OKRs"] },
@@ -249,7 +249,7 @@ export const courses: Course[] = [
     description: "Comprehensive AWS training covering architecture, security, and cost optimization.",
     duration: "14 weeks",
     level: "Intermediate",
-    price: 2399,
+    price: 20000,
     currency: "KES",
     curriculum: [
       { module: 1, title: "AWS Foundations", topics: ["Global Infrastructure", "VPC Design", "IAM Policies", "AWS Organizations"] },
@@ -269,7 +269,7 @@ export const courses: Course[] = [
     description: "Create high-performance mobile applications for iOS and Android with Flutter.",
     duration: "12 weeks",
     level: "Intermediate",
-    price: 1999,
+    price: 15000,
     currency: "KES",
     curriculum: [
       { module: 1, title: "Dart Fundamentals", topics: ["Dart Syntax", "Async Programming", "Streams", "Error Handling"] },
@@ -289,7 +289,7 @@ export const courses: Course[] = [
     description: "Master data engineering with modern tools and frameworks.",
     duration: "14 weeks",
     level: "Advanced",
-    price: 2699,
+    price: 30000,
     currency: "KES",
     curriculum: [
       { module: 1, title: "Data Architecture", topics: ["Data Modeling", "Warehousing Concepts", "Data Lakes", "Medallion Architecture"] },
@@ -309,7 +309,7 @@ export const courses: Course[] = [
     description: "Deep dive into advanced React Native concepts for production applications.",
     duration: "8 weeks",
     level: "Advanced",
-    price: 2199,
+    price: 18000,
     currency: "KES",
     curriculum: [
       { module: 1, title: "Architecture Deep Dive", topics: ["New Architecture", "Fabric Renderer", "Turbo Modules", "Codegen"] },
@@ -329,7 +329,7 @@ export const courses: Course[] = [
     description: "Learn modern digital marketing strategies, tools, and analytics.",
     duration: "8 weeks",
     level: "Beginner",
-    price: 899,
+    price: 5000,
     currency: "KES",
     curriculum: [
       { module: 1, title: "Marketing Foundations", topics: ["Digital Landscape", "Brand Strategy", "Target Audience", "Marketing Funnel"] },
@@ -349,7 +349,7 @@ export const courses: Course[] = [
     description: "Master GraphQL for building efficient, flexible APIs.",
     duration: "8 weeks",
     level: "Intermediate",
-    price: 1499,
+    price: 8000,
     currency: "KES",
     curriculum: [
       { module: 1, title: "GraphQL Core", topics: ["Schema Design", "Queries & Mutations", "Resolvers", "Input Types"] },
@@ -369,7 +369,7 @@ export const courses: Course[] = [
     description: "Learn modern testing methodologies and automation frameworks.",
     duration: "10 weeks",
     level: "Intermediate",
-    price: 1699,
+    price: 10000,
     currency: "KES",
     curriculum: [
       { module: 1, title: "Testing Foundations", topics: ["Testing Types", "Test Planning", "Test Cases", "Bug Tracking"] },
